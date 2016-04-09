@@ -11,13 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{438E9E17
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.WPF", "TaihaToolkit.WPF\TaihaToolkit.WPF.csproj", "{4324F19E-CE24-40F2-B070-443A305247F4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BAA39E9A-9B65-4476-BBB7-C938EA30CACB}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Core.Rx", "TaihaToolkit.Core.Rx\TaihaToolkit.Core.Rx.csproj", "{15201798-B9DB-4999-9FA6-EE7E96505677}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Core.Rx.Tests", "TaihaToolkit.Core.Rx.Tests\TaihaToolkit.Core.Rx.Tests.csproj", "{788F0745-BC74-4C22-BDB1-39935923B9A5}"
