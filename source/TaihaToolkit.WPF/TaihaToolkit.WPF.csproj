@@ -69,15 +69,15 @@
     <Compile Include="WPFDispatcher.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\TaihaToolkit.Core\TaihaToolkit.Core.csproj">
       <Project>{238f7b1b-eb78-429b-a97d-a951ba6693bf}</Project>
       <Name>TaihaToolkit.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
