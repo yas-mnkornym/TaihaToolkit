@@ -3,27 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Studiotaiha.Toolkit.Composition;
 
 namespace Studiotaiha.Toolkit
 {
 	public class LoggingService
 	{
+		public static string RootLoggerTag { get; } = "root";
+
 		#region シングルトン実装
 		static LoggingService current_ = null;
 		public static LoggingService Current
 		{
 			get
 			{
-				return current_ ?? (current_ = new LoggingService(new Logger("root")));
+				return current_ ?? (current_ = new LoggingService());
 			}
 		}
 		#endregion // シングルトン実装
 
-		public ILogger RootLogger{get; private set;}
+		public ILogger RootLogger { get; private set; }
 
-		private LoggingService(ILogger rootLogger)
+		private LoggingService()
 		{
-			RootLogger = rootLogger;
+			RootLogger = CreateLogger(RootLoggerTag);
+		}
+
+		ILogger CreateLogger(string tag)
+		{
+			var loader = new ComponentImplementationLoader<ILogger>();
+			return loader.CreateInstance(tag);
 		}
 
 		public ILogger GetLogger(string tag)
