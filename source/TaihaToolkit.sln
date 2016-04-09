@@ -1,12 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit", "TaihaToolkit\TaihaToolkit.csproj", "{7B206FF6-40FD-437F-A624-C6EC7FF67EAB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Tests", "TaihaToolkit.Tests\TaihaToolkit.Tests.csproj", "{A046815D-8C56-4802-8CA3-82CCE4F8D45D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Core", "TaihaToolkit.Core\TaihaToolkit.Core.csproj", "{238F7B1B-EB78-429B-A97D-A951BA6693BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.XamarinForms", "TaihaToolkit.XamarinForms\TaihaToolkit.XamarinForms.csproj", "{C49563DB-1128-4EE7-B515-52AE153E0189}"
@@ -22,20 +18,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BAA39E
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Core.Rx", "TaihaToolkit.Core.Rx\TaihaToolkit.Core.Rx.csproj", "{15201798-B9DB-4999-9FA6-EE7E96505677}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Core.Rx.Tests", "TaihaToolkit.Core.Rx.Tests\TaihaToolkit.Core.Rx.Tests.csproj", "{788F0745-BC74-4C22-BDB1-39935923B9A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7B206FF6-40FD-437F-A624-C6EC7FF67EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B206FF6-40FD-437F-A624-C6EC7FF67EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B206FF6-40FD-437F-A624-C6EC7FF67EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B206FF6-40FD-437F-A624-C6EC7FF67EAB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A046815D-8C56-4802-8CA3-82CCE4F8D45D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A046815D-8C56-4802-8CA3-82CCE4F8D45D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A046815D-8C56-4802-8CA3-82CCE4F8D45D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A046815D-8C56-4802-8CA3-82CCE4F8D45D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{238F7B1B-EB78-429B-A97D-A951BA6693BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{238F7B1B-EB78-429B-A97D-A951BA6693BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{238F7B1B-EB78-429B-A97D-A951BA6693BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -48,11 +40,19 @@ Global
 		{4324F19E-CE24-40F2-B070-443A305247F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4324F19E-CE24-40F2-B070-443A305247F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4324F19E-CE24-40F2-B070-443A305247F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15201798-B9DB-4999-9FA6-EE7E96505677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15201798-B9DB-4999-9FA6-EE7E96505677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15201798-B9DB-4999-9FA6-EE7E96505677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15201798-B9DB-4999-9FA6-EE7E96505677}.Release|Any CPU.Build.0 = Release|Any CPU
+		{788F0745-BC74-4C22-BDB1-39935923B9A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{788F0745-BC74-4C22-BDB1-39935923B9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{788F0745-BC74-4C22-BDB1-39935923B9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{788F0745-BC74-4C22-BDB1-39935923B9A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{A046815D-8C56-4802-8CA3-82CCE4F8D45D} = {438E9E17-ADEC-49A4-A45E-67AC6AA3ADDB}
+		{788F0745-BC74-4C22-BDB1-39935923B9A5} = {438E9E17-ADEC-49A4-A45E-67AC6AA3ADDB}
 	EndGlobalSection
 EndGlobal

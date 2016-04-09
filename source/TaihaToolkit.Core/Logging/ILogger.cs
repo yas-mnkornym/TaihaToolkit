@@ -52,7 +52,7 @@ namespace Studiotaiha.Toolkit
 		/// <summary>
 		/// ログデータのサブジェクトを取得する。
 		/// </summary>
-		IObservable<LogData> LogSubject { get; }
+		IObservable<LogData> LogSource { get; }
 
 		/// <summary>
 		/// ログが追加されたことを通知するイベント
