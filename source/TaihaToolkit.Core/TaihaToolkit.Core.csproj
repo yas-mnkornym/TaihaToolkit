@@ -70,6 +70,9 @@
     <Compile Include="Settings\SettingsBase.cs" />
     <Compile Include="TaihaToolkit.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="TaihaToolkit.Core.nuspec" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
