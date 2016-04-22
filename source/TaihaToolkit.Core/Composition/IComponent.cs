@@ -14,5 +14,7 @@ namespace Studiotaiha.Toolkit.Composition
 		/// Gets the assembly object of the component.
 		/// </summary>
 		Assembly Assembly { get; }
+
+		Type[] CriticalExceptionTypes { get; }
 	}
 }

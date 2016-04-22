@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Studiotaiha.Toolkit.Logging
 {
+	/// <summary>
+	/// A base implementation of ILogger itnerface
+	/// </summary>
 	public abstract class LoggerBase : ILogger
 	{
 		protected string[] ParentTags { get; }
-		ILogger root_;
 
 
 		/// <summary>
@@ -36,7 +35,7 @@ namespace Studiotaiha.Toolkit.Logging
 		{
 			if (parent == null) { throw new ArgumentNullException("parent"); }
 			Parent = parent;
-			
+
 			// Retrieve parent tags recursively.
 			var parentLogger = parent;
 			var parentTags = new List<string>();
@@ -51,23 +50,16 @@ namespace Studiotaiha.Toolkit.Logging
 			ParentTags = parentTags.ToArray();
 		}
 
-		public virtual IObservable<LogData> LogSource
-		{
-			get
-			{
-				throw new NotSupportedException();
-			}
-		}
-
 		public ILogger Parent { get; }
 
+		ILogger root_;
 		public ILogger Root
 		{
 			get
 			{
 				if (root_ == null) {
 					var logger = Parent;
-					while(logger?.Parent != null) {
+					while (logger?.Parent != null) {
 						logger = logger.Parent;
 					}
 					root_ = logger;
@@ -82,7 +74,7 @@ namespace Studiotaiha.Toolkit.Logging
 
 		public virtual void Log(string message, ELogLevel level = ELogLevel.Information, Exception exception = null, [CallerFilePath] string file = null, [CallerLineNumber] int line = 0, [CallerMemberName] string member = null)
 		{
-			var data = new LogData {
+			var data = new LogEvent {
 				Message = message,
 				Level = level,
 				Exception = exception,
@@ -93,16 +85,13 @@ namespace Studiotaiha.Toolkit.Logging
 				ParentTags = ParentTags
 			};
 
-			// Rxで通知
 			OnLogged(data);
-
-			// イベントで通知
 			RaiseLoggedEvent(data);
 		}
 
-		protected virtual void OnLogged(LogData logData) { }
+		protected virtual void OnLogged(LogEvent logData) { }
 
-		protected void RaiseLoggedEvent(LogData logData)
+		protected void RaiseLoggedEvent(LogEvent logData)
 		{
 			Logged?.Invoke(this, new LogEventArgs(logData));
 		}

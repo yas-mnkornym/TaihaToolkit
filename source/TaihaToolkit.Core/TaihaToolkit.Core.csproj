@@ -52,22 +52,28 @@
     <Compile Include="CoreComponent.cs" />
     <Compile Include="Csv\CsvMaker.cs" />
     <Compile Include="Csv\CsvSplitter.cs" />
-    <Compile Include="Dispatching\BindableBase.cs" />
-    <Compile Include="Dispatching\Dispatchable.cs" />
-    <Compile Include="Dispatching\IDispatcher.cs" />
-    <Compile Include="Dispatching\NotificationObject.cs" />
+    <Compile Include="NotificationObjectWithPropertyBag.cs" />
+    <Compile Include="Dispatchable.cs" />
+    <Compile Include="IDispatcher.cs" />
+    <Compile Include="NotificationObject.cs" />
+    <Compile Include="ExceptionExt.cs" />
     <Compile Include="Logging\BasicLogger.cs" />
     <Compile Include="Logging\ELogLevel.cs" />
     <Compile Include="Logging\ILogger.cs" />
-    <Compile Include="Logging\LogData.cs" />
+    <Compile Include="Logging\LogEvent.cs" />
     <Compile Include="Logging\LogEventArgs.cs" />
     <Compile Include="Logging\LoggerBase.cs" />
-    <Compile Include="Logging\LoggerExt.cs" />
+    <Compile Include="Logging\LoggerExtentions.cs" />
     <Compile Include="Logging\LoggingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings\ISettings.cs" />
+    <Compile Include="Settings\Containers\ProxySettingsContainer.cs" />
+    <Compile Include="Settings\Containers\SettingsContainer.cs" />
+    <Compile Include="Settings\ISettingsContainer.cs" />
+    <Compile Include="Settings\ISettingsSerializer.cs" />
+    <Compile Include="Settings\Serializers\DataContractXmlSettingsSerializer.cs" />
     <Compile Include="Settings\SettingChangeEventArgs.cs" />
     <Compile Include="Settings\SettingsBase.cs" />
+    <Compile Include="Settings\SettingsService.cs" />
     <Compile Include="TaihaToolkit.cs" />
   </ItemGroup>
   <ItemGroup>

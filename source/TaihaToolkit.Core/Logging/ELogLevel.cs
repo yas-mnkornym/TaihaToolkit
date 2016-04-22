@@ -1,38 +1,38 @@
-﻿namespace Studiotaiha.Toolkit
+﻿namespace Studiotaiha.Toolkit.Logging
 {
 	/// <summary>
-	/// ログレベル
+	/// Log level
 	/// </summary>
 	public enum ELogLevel
 	{
 		/// <summary>
-		/// デバッグ情報
+		/// Debug level
 		/// </summary>
 		Debug = 0,
 
 		/// <summary>
-		/// 詳細情報
+		/// Versbose level
 		/// </summary>
-		Verbose = 1,
+		Verbose = 10,
 
 		/// <summary>
-		/// 情報情報
+		/// Information level
 		/// </summary>
-		Information = 2,
+		Information = 20,
 
 		/// <summary>
-		/// 警告情報
+		/// Warning level
 		/// </summary>
-		Warning = 3,
+		Warning = 30,
 
 		/// <summary>
-		/// エラー情報
+		/// Error level
 		/// </summary>
-		Error = 4,
+		Error = 40,
 
 		/// <summary>
-		/// 重篤エラー情報
+		/// Fatal level
 		/// </summary>
-		Fatal = 5,
+		Fatal = 50,
 	}
 }

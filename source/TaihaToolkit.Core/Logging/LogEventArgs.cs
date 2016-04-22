@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Studiotaiha.Toolkit
+namespace Studiotaiha.Toolkit.Logging
 {
 	/// <summary>
 	/// ログ追加イベント情報
@@ -11,7 +11,7 @@ namespace Studiotaiha.Toolkit
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="logData">ログデータ</param>
-		public LogEventArgs(LogData logData)
+		public LogEventArgs(LogEvent logData)
 		{
 			LogData = logData;
 		}
@@ -19,6 +19,6 @@ namespace Studiotaiha.Toolkit
 		/// <summary>
 		/// ログデータを取得する。
 		/// </summary>
-		public LogData LogData { get; private set; }
+		public LogEvent LogData { get; private set; }
 	}
 }

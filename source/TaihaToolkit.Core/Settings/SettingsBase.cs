@@ -1,133 +1,171 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace Studiotaiha.Toolkit
+namespace Studiotaiha.Toolkit.Settings
 {
 	/// <summary>
 	/// 設定の基本実装を提供するクラス
 	/// </summary>
-	public class SettingsBase : NotificationObject
+	public abstract class SettingsBase : NotificationObject, IDisposable
 	{
-		ISettings settings_;
-
 		/// <summary>
 		/// 設定インスタンスを取得する
 		/// </summary>
-		public ISettings Settings { get { return settings_; } }
+		ISettingsContainer Container { get; }
 
 		/// <summary>
-		/// コンストラクタ
+		/// Constructor
 		/// </summary>
-		/// <param name="settings">設定インスタンス</param>
-		/// <param name="dispatcher">ディスパッチャ</param>
+		/// <param name="container">Instance of ISettingsContainer</param>
+		/// <param name="dispatcher">Dispatcher to associate</param>
 		protected SettingsBase(
-			ISettings settings, // not null
+			ISettingsContainer container,
 			IDispatcher dispatcher = null)
 			: base(dispatcher)
 		{
-			if (settings == null) { throw new ArgumentNullException("settings"); }
-			settings_ = settings;
-			settings_.SettingChanged += settings_SettingChanged;
+			if (container == null) { throw new ArgumentNullException("settings"); }
+
+			Container = container;
+			Container.SettingChanged += Container_SettingChanged;
 		}
 
-		void settings_SettingChanged(object sender, SettingChangeEventArgs e)
+		void Container_SettingChanged(object sender, SettingChangeEventArgs e)
 		{
 			RaisePropertyChanged(e.Key);
 		}
 
 		/// <summary>
-		/// 呼び出したプロパティ名の設定を取得する。
+		/// Gets a setting value.
 		/// </summary>
-		/// <typeparam name="T">設定の型</typeparam>
-		/// <param name="defaultValue">デフォルト値</param>
-		/// <param name="key">プロパティ名</param>
-		/// <returns>取得した値</returns>
+		/// <typeparam key="T">Type of the value</typeparam>
+		/// <param key="key">Key of the setting</param>
+		/// <param key="defaultValue">Default value</param>
+		/// <returns>Decrypted value, or default value (if the key doesn't exist.)</returns>
 		protected T GetMe<T>(T defaultValue = default(T), [CallerMemberName]string key = null)
 		{
-			return Settings.Get(key, defaultValue);
+			return Container.Get(key, defaultValue);
 		}
 
 		/// <summary>
-		/// 呼び出したプロパティ名の設定を設定する。
+		/// Sets a setting value.
 		/// </summary>
-		/// <typeparam name="T">設定の型</typeparam>
-		/// <param name="value">値</param>
-		/// <param name="key">プロパティ名</param>
+		/// <typeparam key="T">Type of the value</typeparam>
+		/// <param key="key">Key of the setting</param>
+		/// <param key="value">Value</param>
 		protected void SetMe<T>(T value, [CallerMemberName]string key = null)
 		{
-			Settings.Set(key, value);
+			Container.Set(key, value);
+		}
+		
+		/// <summary>
+		/// Gets a decrypted setting value.
+		/// </summary>
+		/// <param key="defaultValue">Default value</param>
+		/// <param key="key">Key of the setting</param>
+		/// <returns>Decrypted value, or default value (if the key doesn't exist.)</returns>
+		protected string GetDecryptedOrDefault(string defaultValue = null, [CallerMemberName]string key = null)
+		{
+			return Container.GetDecryptedStringOrDefault(key, defaultValue);
 		}
 
 		/// <summary>
-		/// 呼び出したプロパティ名の復号された設定を取得する。
+		/// Sets an encrypted setting value.
 		/// </summary>
-		/// <typeparam name="T">設定の型</typeparam>
-		/// <param name="defaultValue">デフォルト値</param>
-		/// <param name="key">プロパティ名</param>
-		/// <returns>取得した値</returns>
-		protected T GetMeDecrypted<T>(T defaultValue = default(T), [CallerMemberName]string key = null)
+		/// <param key="key">Key of the setting</param>
+		/// <param key="value">The value</param>
+		protected void SetMeCrypted(string value, [CallerMemberName]string key = null)
 		{
-			return Settings.GetDecrypted(key, defaultValue);
+			Container.SetCryptedString(key, value);
 		}
 
 		/// <summary>
-		/// 呼び出したプロパティ名の暗号化された設定を設定する。
+		/// Remove a setting.
 		/// </summary>
-		/// <typeparam name="T">設定の型</typeparam>
-		/// <param name="value">値</param>
-		/// <param name="key">プロパティ名</param>
-		protected void SetMeCrypted<T>(T value, [CallerMemberName]string key = null)
-		{
-			Settings.SetCrypted(key, value);
-		}
-
-		/// 呼び出したプロパティ名の設定を削除する。
-		/// </summary>
-		/// <param name="key">プロパティ名</param>
+		/// <param key="key">Key of the settings</param>
 		protected void RemoveMe([CallerMemberName]string key = null)
 		{
-			Settings.Remove(key);
+			Container.Remove(key);
 		}
 
 		/// <summary>
-		/// 設定を設定する
+		/// Sets a setting value.
 		/// </summary>
-		/// <typeparam key="T">データの型</typeparam>
-		/// <param key="key">データのキー</param>
-		/// <param key="value">データの値</param>
+		/// <typeparam key="T">Type of the value</typeparam>
+		/// <param key="key">Key of the setting</param>
+		/// <param key="value">Value</param>
 		protected void Set<T>(string key, T value)
 		{
-			Settings.Set(key, value);
+			Container.Set(key, value);
 		}
 
 		/// <summary>
-		/// 設定を取得する
+		/// Gets a setting value.
 		/// </summary>
-		/// <typeparam key="T">データの型</typeparam>
-		/// <param key="key">データのキー</param>
-		/// <param key="defaultValue">データの値</param>
-		/// <returns>データ</returns>
+		/// <typeparam key="T">Type of the value</typeparam>
+		/// <param key="key">Key of the setting</param>
+		/// <param key="defaultValue">Default value</param>
+		/// <returns>Decrypted value, or default value (if the key doesn't exist.)</returns>
 		protected T Get<T>(string key, T defaultValue = default(T))
 		{
-			return Settings.Get(key, defaultValue);
+			return Container.Get(key, defaultValue);
 		}
 
 		/// <summary>
-		/// データを削除する
+		/// Sets an encrypted setting value.
 		/// </summary>
-		/// <param key="key">データのキー</param>
+		/// <param key="key">Key of the setting</param>
+		/// <param key="value">Value</param>
+		protected void SetCrypted(string key, string value)
+		{
+			Container.SetCryptedString(key, value);
+		}
+
+		/// <summary>
+		/// Gets a decrypted setting value.
+		/// </summary>
+		/// <param key="key">Key of the setting</param>
+		/// <param key="defaultValue">Default value</param>
+		/// <returns>Decrypted value, or default value (if the key doesn't exist.)</returns>
+		protected string GetDecrypted(string key, string defaultValue = null)
+		{
+			return Container.GetDecryptedStringOrDefault(key, defaultValue);
+		}
+
+		/// <summary>
+		/// Remove a setting.
+		/// </summary>
+		/// <param key="key">Key of the settings</param>
 		protected void Remove(string key)
 		{
-			Settings.Remove(key);
+			Container.Remove(key);
 		}
 
 		/// <summary>
-		/// データを全て削除する。
+		/// Remove all settings.
 		/// </summary>
 		protected void Clear()
 		{
-			Settings.Clear();
+			Container.Clear();
 		}
 
+		#region IDisposable interface
+
+		bool isDisposed_ = false;
+		virtual protected void Dispose(bool disposing)
+		{
+			if (isDisposed_) { return; }
+			if (disposing) {
+				Container.SettingChanged -= Container_SettingChanged;
+			}
+			isDisposed_ = true;
+		}
+
+		public void Dispose()
+		{
+			Dispose(true);
+			GC.SuppressFinalize(this);
+		}
+
+		#endregion
 	}
 }

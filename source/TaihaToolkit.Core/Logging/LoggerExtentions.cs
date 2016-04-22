@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Studiotaiha.Toolkit
+namespace Studiotaiha.Toolkit.Logging
 {
-	public static class LoggerExt
+	public static class LoggerExtentions
 	{
 		#region Error
 		public static void Error(
