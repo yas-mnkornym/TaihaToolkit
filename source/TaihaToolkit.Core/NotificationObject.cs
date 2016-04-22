@@ -12,7 +12,7 @@ namespace Studiotaiha.Toolkit
 		{ }
 
 		/// <summary>
-		/// プロパティの変更完了を通知する
+		/// Notify that a property value is changed.
 		/// </summary>
 		/// <param name="propertyName"></param>
 		protected virtual void RaisePropertyChanged([CallerMemberName]string propertyName = null)
@@ -25,7 +25,7 @@ namespace Studiotaiha.Toolkit
 		}
 
 		/// <summary>
-		/// 式からメンバ名を取得する。
+		/// -Gets a member name from an exception syntax.
 		/// </summary>
 		/// <typeparam name="MemberType">メンバの型</typeparam>
 		/// <param name="expression">式</param>
@@ -34,7 +34,7 @@ namespace Studiotaiha.Toolkit
 		{
 			return ((MemberExpression)expression.Body).Member.Name;
 		}
-		
+
 		public event PropertyChangedEventHandler PropertyChanged;
 	}
 }

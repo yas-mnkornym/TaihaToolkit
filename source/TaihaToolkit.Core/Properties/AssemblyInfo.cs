@@ -11,10 +11,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("スタジオ大破")]
 [assembly: AssemblyProduct("TaihaToolkit.Core")]
-[assembly: AssemblyCopyright("Copyright (C) Studiotaiha 2015")]
+[assembly: AssemblyCopyright("Copyright (C) スタジオ大破 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: NeutralResourcesLanguage("ja")]
+[assembly: NeutralResourcesLanguage("")]
 
 // アセンブリのバージョン情報は、以下の 4 つの値で構成されています:
 //
@@ -26,5 +26,7 @@ using System.Runtime.InteropServices;
 // すべての値を指定するか、下のように '*' を使ってビルドおよびリビジョン番号を 
 // 既定値にすることができます:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.30.*")]
+[assembly: AssemblyVersion("1.1.0.*")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+[assembly: InternalsVisibleTo("TaihaToolkit.Core.Tests")]

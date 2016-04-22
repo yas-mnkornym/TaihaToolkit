@@ -1,27 +1,27 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace Studiotaiha.Toolkit
+namespace Studiotaiha.Toolkit.Logging
 {
 	/// <summary>
-	/// Loggerインターフェイス
+	/// Represents a logger.
 	/// </summary>
 	public interface ILogger
 	{
 		/// <summary>
-		/// ロガーのタグを取得する
+		/// Gets the logger tag.
 		/// </summary>
 		string Tag { get; }
 
 		/// <summary>
-		/// ログを記録する
+		/// Log an event.
 		/// </summary>
-		/// <param name="message">メッセージ</param>
-		/// <param name="level">ログレベル</param>
-		/// <param name="exception">例外情報</param>
-		/// <param name="file">ファイル名</param>
-		/// <param name="line">行番号</param>
-		/// <param name="member">メンバ名</param>
+		/// <param name="message">Message</param>
+		/// <param name="level">Level</param>
+		/// <param name="exception">Exception to be associated to the event</param>
+		/// <param name="file">Filename</param>
+		/// <param name="line">Line number</param>
+		/// <param name="member">Member name</param>
 		void Log(
 			string message,
 			ELogLevel level = ELogLevel.Information,
@@ -30,35 +30,29 @@ namespace Studiotaiha.Toolkit
 			[CallerLineNumber]int line = 0,
 			[CallerMemberName]string member = null
 			);
-
-
+		
 		/// <summary>
-		/// 子ロガーを作成する
+		/// Create a child logger.
 		/// </summary>
 		/// <param name="tag"></param>
 		/// <returns></returns>
 		ILogger CreateChild(string tag);
 
 		/// <summary>
-		/// 親ロガーを取得する
+		/// Gets the parent logger.
 		/// </summary>
 		ILogger Parent { get; }
 
 		/// <summary>
-		/// 最上位の親ロガーを表示する
+		/// Gets the root logger.
 		/// </summary>
 		ILogger Root { get; }
 
 		/// <summary>
-		/// ログデータのサブジェクトを取得する。
-		/// </summary>
-		IObservable<LogData> LogSource { get; }
-
-		/// <summary>
-		/// ログが追加されたことを通知するイベント
+		/// Notifies when an event is logged.
 		/// </summary>
 		/// <remarks>
-		/// 下位のログデータの追加がすべて通知される。
+		/// Logged event of children loggers are redirected to this.
 		/// </remarks>
 		event EventHandler<LogEventArgs> Logged;
 

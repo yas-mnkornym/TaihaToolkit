@@ -3,33 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Studiotaiha.Toolkit.Composition;
 
-namespace Studiotaiha.Toolkit
+namespace Studiotaiha.Toolkit.Alert
 {
 	public class AlertService
 	{
-		public IAlertManager AlertManager { get; private set; }
+		#region Singleton
 
-		private AlertService(IAlertManager alertManager)
+		static AlertService instance_;
+		public static AlertService Instance => instance_ ?? (instance_ = new AlertService());
+
+		#endregion
+
+		public IAlertManager AlertManager { get; }
+
+		private AlertService()
 		{
-			if (alertManager == null) { throw new ArgumentNullException("alertManager"); }
-			AlertManager = alertManager;
-		}
+			var loader = new ComponentImplementationLoader<IAlertManager>();
+			AlertManager = loader.CreateInstance();
 
-		static AlertService current_;
-		static public AlertService Current
-		{
-			get
-			{
-				if (current_ == null) { throw new InvalidOperationException("AlertService is not initialized."); }
-				return current_;
-			}
+			if (AlertManager == null) { throw new InvalidOperationException("Failed to create alert manager"); }
 		}
-
-		static internal void Initialize(IAlertManager alertManager)
-		{
-			current_ = new AlertService(alertManager);
-		}
-
 	}
 }

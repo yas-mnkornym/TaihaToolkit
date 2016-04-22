@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Windows.Threading;
 
-namespace Studiotaiha.Toolkit.WPF
+namespace Studiotaiha.Toolkit
 {
 	public class WPFDispatcher : IDispatcher
 	{

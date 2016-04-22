@@ -1,49 +1,49 @@
 ﻿using System;
 
-namespace Studiotaiha.Toolkit
+namespace Studiotaiha.Toolkit.Logging
 {
 	/// <summary>
-	/// ログ情報
+	/// Log event
 	/// </summary>
-	public class LogData
+	public class LogEvent
 	{
 		/// <summary>
-		/// タグ
+		/// Gets the logger tag which logged this event.
 		/// </summary>
 		public string Tag { get; set; }
 
 		/// <summary>
-		/// 親タグ
+		/// Gets parent logger tags.
 		/// </summary>
 		public string[] ParentTags { get; set; }
 
 		/// <summary>
-		/// メッセージ
+		/// Gets the message.
 		/// </summary>
 		public string Message { get; set; }
 
 		/// <summary>
-		/// ログレベル
+		/// Gets the log level.
 		/// </summary>
 		public ELogLevel Level { get; set; }
 
 		/// <summary>
-		/// 例外情報
+		/// Gets the exception object associated to the event.
 		/// </summary>
 		public Exception Exception { get; set; }
 
 		/// <summary>
-		/// ファイル名
+		/// Gets the file name which logged this event.
 		/// </summary>
 		public string FileName { get; set; }
 
 		/// <summary>
-		/// 行番号
+		/// Gets the line number where this event is logged.
 		/// </summary>
 		public int LineNumber { get; set; }
 
 		/// <summary>
-		/// メンバ名
+		/// Gets the member name which logged this event.
 		/// </summary>
 		public string MemberName { get; set; }
 	}
