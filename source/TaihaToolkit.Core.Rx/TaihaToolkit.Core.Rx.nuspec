@@ -10,7 +10,12 @@
 		<projectUrl>https://github.com/yas-mnkornym/TaihaToolkit</projectUrl>
 		<licenseUrl>https://github.com/yas-mnkornym/TaihaToolkit/blob/master/LICENSE</licenseUrl>
 		<dependencies>
-			<dependency id="TaihaToolkit.Core" version="1.1.0" />
+			<dependency id="TaihaToolkit.Core" version="1.1.1" />
+			<dependency id="Rx-Core" version="2.2.5" />
+			<dependency id="Rx-Interfaces" version="2.2.5" />
+			<dependency id="Rx-Linq" version="2.2.5" />
+			<dependency id="Rx-Main" version="2.2.5" />
+			<dependency id="Rx-PlatformServices" version="2.2.5" />
 		</dependencies>
 	</metadata>
 </package>
