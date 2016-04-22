@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>$id$</id>
+		<title>$title$</title>
+		<version>$version$</version>
+		<authors>$author$</authors>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<projectUrl>https://github.com/yas-mnkornym/TaihaToolkit</projectUrl>
+		<licenseUrl>https://github.com/yas-mnkornym/TaihaToolkit/blob/master/LICENSE</licenseUrl>
+		<dependencies>
+			<dependency id="TaihaToolkit.Core" version="1.1.1" />
+		</dependencies>
+	</metadata>
+</package>
