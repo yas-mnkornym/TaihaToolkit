@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Studiotaiha.Toolkit
+namespace Studiotaiha.Toolkit.Alert
 {
 	/// <summary>
 	/// DialogCallbackの処理をDelegateで行うためのクラス

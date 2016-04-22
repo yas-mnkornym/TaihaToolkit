@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Reflection;
+using System.Security;
 using Studiotaiha.Toolkit.Composition;
 
 namespace Studiotaiha.Toolkit
 {
-	internal class CoreComponent : IComponent
+	public class CoreComponent : IComponent
 	{
 		public static Guid ComponentId { get; } = new Guid("143873BB-3709-4DF6-B558-910B6746CFEF");
 
@@ -19,5 +20,9 @@ namespace Studiotaiha.Toolkit
 		public Assembly Assembly => GetType().GetTypeInfo().Assembly;
 
 		public Guid Id => ComponentId;
+
+		public Type[] CriticalExceptionTypes { get; } = new Type[] {
+			typeof(SecurityException),
+		};
 	}
 }

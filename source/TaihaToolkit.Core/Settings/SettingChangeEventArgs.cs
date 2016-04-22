@@ -1,32 +1,39 @@
 ﻿using System;
 
-namespace Studiotaiha.Toolkit
+namespace Studiotaiha.Toolkit.Settings
 {
 	public sealed class SettingChangeEventArgs : EventArgs
 	{
 		public SettingChangeEventArgs(
+			string tag,
 			string key,
 			object oldValue,
 			object newValue)
 		{
+			Tag = tag;
 			Key = key;
 			OldValue = oldValue;
 			NewValue = newValue;
 		}
 
 		/// <summary>
-		/// 変更された設定のキーを取得する。
+		/// Gets tag of the setting container.
 		/// </summary>
-		public string Key { get; private set; }
+		public string Tag { get; }
 
 		/// <summary>
-		/// 変更される前の値を取得する。
+		/// Gets key of the setting.
 		/// </summary>
-		public object OldValue { get; private set; }
+		public string Key { get; }
 
 		/// <summary>
-		/// 変更された後の値を取得する。
+		/// Gets the old value.
 		/// </summary>
-		public object NewValue { get; private set; }
+		public object OldValue { get; }
+
+		/// <summary>
+		/// Gets the new value.
+		/// </summary>
+		public object NewValue { get; }
 	}
 }

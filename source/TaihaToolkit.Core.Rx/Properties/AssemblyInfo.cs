@@ -7,14 +7,14 @@ using System.Runtime.InteropServices;
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle("TaihaToolkit.Core.Rx")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("俺は余裕で大丈夫")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("スタジオ大破")]
 [assembly: AssemblyProduct("TaihaToolkit.Core.Rx")]
-[assembly: AssemblyCopyright("Copyright (C)  2016")]
+[assembly: AssemblyCopyright("Copyright (C) スタジオ大破 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: NeutralResourcesLanguage("ja")]
+[assembly: NeutralResourcesLanguage("")]
 
 // アセンブリのバージョン情報は次の 4 つの値で構成されています:
 //

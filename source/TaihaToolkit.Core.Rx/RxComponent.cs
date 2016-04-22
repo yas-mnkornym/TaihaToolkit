@@ -2,7 +2,7 @@
 using System.Reflection;
 using Studiotaiha.Toolkit.Composition;
 
-namespace Studiotaiha.Toolkit.Core.Rx
+namespace Studiotaiha.Toolkit
 {
 	public class RxComponent : IComponent
 	{
@@ -19,5 +19,7 @@ namespace Studiotaiha.Toolkit.Core.Rx
 		public Assembly Assembly => GetType().GetTypeInfo().Assembly;
 
 		public Guid Id => ComponentId;
+
+		public Type[] CriticalExceptionTypes { get; } = new Type[] { };
 	}
 }
