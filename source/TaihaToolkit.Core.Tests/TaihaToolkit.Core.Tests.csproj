@@ -51,6 +51,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="NotificationObjectWithPropertyBagTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\Containers\ProxySettingsContainerTest.cs" />
     <Compile Include="Settings\Containers\SettingsContainerTest.cs" />
