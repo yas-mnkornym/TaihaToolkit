@@ -52,13 +52,13 @@ namespace Studiotaiha.Toolkit.Core.Tests.Settings.Containers
 				Assert.AreEqual(data.Value, actual, data.Key);
 			}
 
-			Assert.AreEqual(testData.Count, container.Settings.Count());
-			Assert.AreEqual(testData.Count, changingCalledCount);
-			Assert.AreEqual(testData.Count, changedCalledCount);
+			Assert.AreEqual(testData.Count-1, container.Settings.Count());
+			Assert.AreEqual(testData.Count-1, changingCalledCount);
+			Assert.AreEqual(testData.Count-1, changedCalledCount);
 			
 
 			var expectedCount = container.Settings.Count();
-			foreach (var data in testData) {
+			foreach (var data in testData.TakeWhile(x => x.Value != null)) {
 				container.Remove(data.Key);
 				expectedCount--;
 				Assert.AreEqual(expectedCount, container.Settings.Count());
@@ -71,7 +71,7 @@ namespace Studiotaiha.Toolkit.Core.Tests.Settings.Containers
 				var actual = container.Get<object>(data.Key);
 			}
 
-			Assert.AreEqual(testData.Count, container.Settings.Count());
+			Assert.AreEqual(testData.Count-1, container.Settings.Count());
 			container.Clear();
 			Assert.AreEqual(0, container.Settings.Count());
 		}
@@ -107,7 +107,6 @@ namespace Studiotaiha.Toolkit.Core.Tests.Settings.Containers
 					String = Guid.NewGuid().ToString(),
 					Float = 5.5f,
 				},
-				["null"] = null,
 			};
 			
 			int changingCalledCount = 0, changedCalledCount = 0;
