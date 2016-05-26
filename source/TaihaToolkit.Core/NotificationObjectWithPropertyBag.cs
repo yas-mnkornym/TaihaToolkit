@@ -40,7 +40,7 @@ namespace Studiotaiha.Toolkit
 				: default(T);
 
 			var isChanged = value == null
-				? oldValueObject == null
+				? oldValueObject != null
 				: !value.Equals(oldValue);
 
 			if (isChanged) {
