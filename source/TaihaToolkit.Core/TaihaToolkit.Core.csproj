@@ -36,16 +36,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Alert\AlertManagerExt.cs" />
-    <Compile Include="Alert\AlertService.cs" />
-    <Compile Include="Alert\CaptionMessageKind.cs" />
-    <Compile Include="Alert\DelegateDialogCallback.cs" />
-    <Compile Include="Alert\DialogCallbackBase.cs" />
-    <Compile Include="Alert\EnglishStringProvider.cs" />
-    <Compile Include="Alert\IAlertManager.cs" />
-    <Compile Include="Alert\IAlertStringProvider.cs" />
-    <Compile Include="Alert\IDialogCallback.cs" />
-    <Compile Include="Alert\IDialogConfig.cs" />
+    <Compile Include="Dialog\DialogManagerExtentions.cs" />
+    <Compile Include="Dialog\DialogService.cs" />
+    <Compile Include="Dialog\DelegateDialogCallback.cs" />
+    <Compile Include="Dialog\DialogCallbackBase.cs" />
+    <Compile Include="Dialog\DialogStringLocalizerAttribute.cs" />
+    <Compile Include="Dialog\DialogStringLocalizers\EnglishDialogStringLocalizer .cs" />
+    <Compile Include="Dialog\DialogStringLocalizers\JapaneseDialogStringLocalizer.cs" />
+    <Compile Include="Dialog\DialogSelection.cs" />
+    <Compile Include="Dialog\ECommonSelection.cs" />
+    <Compile Include="Dialog\EDialogType.cs" />
+    <Compile Include="Dialog\IDialogManager.cs" />
+    <Compile Include="Dialog\IDialogStringProvider.cs" />
+    <Compile Include="Dialog\IDialogCallback.cs" />
+    <Compile Include="Dialog\IDialogConfig.cs" />
     <Compile Include="Composition\ComponentImplementationAttribute.cs" />
     <Compile Include="Composition\ComponentImplementationLoader.cs" />
     <Compile Include="Composition\IComponent.cs" />

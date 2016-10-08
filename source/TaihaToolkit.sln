@@ -17,6 +17,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.WPF.Tests", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Core.Tests", "TaihaToolkit.Core.Tests\TaihaToolkit.Core.Tests.csproj", "{98131726-CD7D-4DEF-B6FA-95D3B7818B7B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Showcases", "Showcases", "{29487D4B-F1B6-4A41-9EEA-2FB69668A1EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Showcase.ConsoleApp", "TaihaToolkit.Showcase.ConsoleApp\TaihaToolkit.Showcase.ConsoleApp.csproj", "{08161D21-72CE-4F02-8A17-E889F60901F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.ConsoleApp", "TaihaToolkit.ConsoleApp\TaihaToolkit.ConsoleApp.csproj", "{6B757596-4759-445F-8AE1-A324F3B5F5C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +53,14 @@ Global
 		{98131726-CD7D-4DEF-B6FA-95D3B7818B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98131726-CD7D-4DEF-B6FA-95D3B7818B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98131726-CD7D-4DEF-B6FA-95D3B7818B7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08161D21-72CE-4F02-8A17-E889F60901F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08161D21-72CE-4F02-8A17-E889F60901F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08161D21-72CE-4F02-8A17-E889F60901F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08161D21-72CE-4F02-8A17-E889F60901F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B757596-4759-445F-8AE1-A324F3B5F5C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B757596-4759-445F-8AE1-A324F3B5F5C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B757596-4759-445F-8AE1-A324F3B5F5C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B757596-4759-445F-8AE1-A324F3B5F5C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,5 +69,6 @@ Global
 		{788F0745-BC74-4C22-BDB1-39935923B9A5} = {438E9E17-ADEC-49A4-A45E-67AC6AA3ADDB}
 		{0AE7751B-B22C-468C-AB51-CBC7CA0FB026} = {438E9E17-ADEC-49A4-A45E-67AC6AA3ADDB}
 		{98131726-CD7D-4DEF-B6FA-95D3B7818B7B} = {438E9E17-ADEC-49A4-A45E-67AC6AA3ADDB}
+		{08161D21-72CE-4F02-8A17-E889F60901F3} = {29487D4B-F1B6-4A41-9EEA-2FB69668A1EF}
 	EndGlobalSection
 EndGlobal

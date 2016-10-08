@@ -1,71 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Studiotaiha.Toolkit.Alert
+﻿namespace Studiotaiha.Toolkit.Dialog
 {
-	public interface IAlertStringProvider
+	public interface IDialogStringLocalizer
 	{
 		/// <summary>
-		/// エラー
+		/// Gets the string represents EAlertType.Error.
 		/// </summary>
 		string Error { get; }
 
 		/// <summary>
-		/// 警告
+		/// Gets the string represents EAlertType.Warning.
 		/// </summary>
 		string Warning { get; }
 
 		/// <summary>
-		/// 情報
+		/// Gets the string represents EAlertType.Information.
 		/// </summary>
 		string Information { get; }
 
 		/// <summary>
-		/// デバッグ
+		/// Gets the string represents EAlertType.Debug.
 		/// </summary>
 		string Debug { get; }
 
 		/// <summary>
-		/// 質問
+		/// Gets the string represents EAlertType.Question.
 		/// </summary>
 		string Question { get; }
 
 		/// <summary>
-		/// はい
+		/// Gets the string represents "Yes".
 		/// </summary>
 		string Yes { get; }
 
 		/// <summary>
-		/// いいえ
+		/// Gets the string represents "No".
 		/// </summary>
 		string No { get; }
 
 		/// <summary>
-		/// OK
+		/// Gets the string represents "OK".
 		/// </summary>
 		string Ok { get; }
 
 		/// <summary>
-		/// キャンセル
+		/// Gets the string represents "Cancel".
 		/// </summary>
 		string Cancel { get; }
 
 		/// <summary>
-		/// 選択
+		/// Gets the string represents "Select".
 		/// </summary>
 		string Select { get; }
 
 		/// <summary>
-		/// 確認
+		/// Gets the string represents "Confirmation".
 		/// </summary>
 		string Confirmation { get; }
-
-		/// <summary>
-		/// 注意
-		/// </summary>
-		string Exclamation { get; }
 	}
 }
