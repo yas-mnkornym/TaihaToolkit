@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace StudioTaiha.Toolkit.Showcase.ConsoleApp.Scenarios.Dialog
 {
@@ -20,12 +19,10 @@ namespace StudioTaiha.Toolkit.Showcase.ConsoleApp.Scenarios.Dialog
 			throw new NotSupportedException();
 		}
 
-		public IEnumerable<IScenario> SubScenarios
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
+		public IEnumerable<IScenario> SubScenarios { get; } =
+			Assembly.GetExecutingAssembly()
+				.GetTypes()
+				.Where(type => type.IsSubclassOf(typeof(DialogScenarioBase)))
+				.Select(type => (IScenario)Activator.CreateInstance(type));
 	}
 }

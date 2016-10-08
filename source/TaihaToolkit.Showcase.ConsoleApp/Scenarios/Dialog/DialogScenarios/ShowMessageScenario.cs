@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Studiotaiha.Toolkit.Dialog;
 
 namespace StudioTaiha.Toolkit.Showcase.ConsoleApp.Scenarios.Dialog.DialogScenarios
 {
+	[SubScenario(typeof(DialogScenario))]
 	class ShowMessageScenario : DialogScenarioBase
 	{
 		public ShowMessageScenario()
@@ -16,7 +13,7 @@ namespace StudioTaiha.Toolkit.Showcase.ConsoleApp.Scenarios.Dialog.DialogScenari
 		protected override void ShowDialog(IDialogManager dialogMangaer)
 		{
 			dialogMangaer.ShowMessage(
-				"Content",
+				"Message body",
 				"Caption",
 				new Exception("exception message"),
 				EDialogType.Information);

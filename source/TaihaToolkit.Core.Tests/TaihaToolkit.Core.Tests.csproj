@@ -57,6 +57,7 @@
     <Compile Include="Settings\Serializers\DataContractXmlSettingsSerializerTest.cs" />
     <Compile Include="Settings\SettingsServiceTest.cs" />
     <Compile Include="Settings\TestClass.cs" />
+    <Compile Include="Utilities\EnumUtilities\EnumExtensionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TaihaToolkit.Core\TaihaToolkit.Core.csproj">

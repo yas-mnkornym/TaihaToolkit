@@ -4,9 +4,9 @@ using System.Linq;
 namespace Studiotaiha.Toolkit.Dialog
 {
 	[System.AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
-	sealed class DialogStringLocalizerAttribute : Attribute
+	sealed class DialogLocalizedStringProviderAttribute : Attribute
 	{
-		public DialogStringLocalizerAttribute(params string[] supportedCultures)
+		public DialogLocalizedStringProviderAttribute(params string[] supportedCultures)
 		{
 			SupportedCultures = supportedCultures
 				.Select(x => x?.ToLower())

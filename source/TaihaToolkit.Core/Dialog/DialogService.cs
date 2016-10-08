@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using Studiotaiha.Toolkit.Composition;
+using Studiotaiha.Toolkit.Dialog.LocalizedStringProviders;
 
 namespace Studiotaiha.Toolkit.Dialog
 {
-	public sealed class DialogService
+    public sealed class DialogService
 	{
 		#region Singleton
 
@@ -16,20 +18,46 @@ namespace Studiotaiha.Toolkit.Dialog
 		/// <summary>
 		/// Gets current dialog manager
 		/// </summary>
-		public IDialogManager DialogManager { get; private set; }
+        IDialogManager dialogManager_;
+		public IDialogManager DialogManager
+        {
+            get
+            {
+                if (dialogManager_ == null) {
+                    RecreateManager();
+                }
+
+                return dialogManager_;
+            }
+        }
 
 		private DialogService()
 		{
-			RecreateManager();
-			if (DialogManager == null) { throw new InvalidOperationException("Failed to create alert manager"); }
+			RegisterLocalizerGenerator(CultureInfo.InvariantCulture, () => new EnglishLocalizedStringProvider());
+			RegisterLocalizerGenerator(new CultureInfo("ja-jp"), () => new JapaneseLocalizedStringProvider());
+			RegisterLocalizerGenerator(new CultureInfo("en-us"), () => new EnglishLocalizedStringProvider());
 		}
 
 		public void RecreateManager()
 		{			
 			var loader = new ComponentImplementationLoader<IDialogManager>();
-			DialogManager = loader.CreateInstance();
+			dialogManager_ = loader.CreateInstance();
 			
 			DialogManagerChanged?.Invoke(this, DialogManager);
+		}
+
+		Dictionary<CultureInfo, Func<IDialogLocalizedStringProvider>> CultureLocalizerGeneratorMap { get; } = new Dictionary<CultureInfo, Func<IDialogLocalizedStringProvider>>();
+		public void RegisterLocalizerGenerator(CultureInfo culture, Func<IDialogLocalizedStringProvider> generator)
+		{
+			if (generator == null) { throw new ArgumentNullException(nameof(generator)); }
+			CultureLocalizerGeneratorMap[culture] = generator;
+		}
+
+		public IDialogLocalizedStringProvider GetLocalizedStringProvider(CultureInfo culture)
+		{
+            Func<IDialogLocalizedStringProvider> generator;
+            CultureLocalizerGeneratorMap.TryGetValue(culture, out generator);
+            return generator?.Invoke();
 		}
 
 		public event EventHandler<IDialogManager> DialogManagerChanged;

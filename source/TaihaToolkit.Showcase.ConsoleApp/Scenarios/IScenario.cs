@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace StudioTaiha.Toolkit.Showcase.ConsoleApp.Scenarios
 {
-	interface IScenario
+	public interface IScenario
 	{
 		string Title { get; }
 		string Description { get; }

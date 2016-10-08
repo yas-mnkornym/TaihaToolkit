@@ -40,8 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleComponent.cs" />
     <Compile Include="ConsoleUtils\ForegroundColorScope.cs" />
+    <Compile Include="Dialog\DialogConfig.cs" />
+    <Compile Include="Dialog\DialogManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TaihaToolkit.Core\TaihaToolkit.Core.csproj">
+      <Project>{238f7b1b-eb78-429b-a97d-a951ba6693bf}</Project>
+      <Name>TaihaToolkit.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

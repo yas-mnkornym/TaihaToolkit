@@ -21,7 +21,7 @@ namespace Studiotaiha.Toolkit
 
 		public static Guid ComponentId { get; } = new Guid("7A27BE45-872B-4825-B268-09D7B310CE19");
 
-		public Assembly Assembly => this.GetType().Assembly;
+		public Assembly Assembly => GetType().Assembly;
 
 		public Type[] CriticalExceptionTypes { get; } = new Type[] {
 			typeof(AccessViolationException),

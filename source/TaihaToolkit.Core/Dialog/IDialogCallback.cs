@@ -5,7 +5,7 @@
 		/// <summary>
 		/// Invoked before the dialog is closing.
 		/// </summary>
-		/// <param name="selection"></param>
+		/// <param name="selection">Selected dialog item</param>
 		/// <returns>
 		/// Dialog will close if true is returned.
 		/// </returns>
@@ -14,7 +14,8 @@
 		/// <summary>
 		/// Invoked after the dialog is closed.
 		/// </summary>
-		void OnClosed();
+		/// <param name="selection">Selected dialog item</param>
+		void OnClosed(TResult selection);
 
 		/// <summary>
 		/// Invoked when the copy button is pressed.

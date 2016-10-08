@@ -20,6 +20,11 @@ namespace Studiotaiha.Toolkit.Dialog
 		string Caption { get; set; }
 
 		/// <summary>
+		/// Gets or sets a value represents if the dialog supports copy feature.
+		/// </summary>
+		bool IsCopySupported { get; set; }
+
+		/// <summary>
 		/// Gets or sets callback of the dialog.
 		/// </summary>
 		IDialogCallback<TResult> Callback { get; set; }

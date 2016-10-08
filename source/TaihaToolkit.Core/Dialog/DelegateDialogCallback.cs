@@ -15,7 +15,7 @@ namespace Studiotaiha.Toolkit.Dialog
 		/// <summary>
 		/// Gets or sets the handler to handle OnClosed().
 		/// </summary>
-		public Action ClosedHandler { get; set; }
+		public Action<TResult> ClosedHandler { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the handler to handle OnCopy().
@@ -27,7 +27,7 @@ namespace Studiotaiha.Toolkit.Dialog
 
 		#region IDialogCallback interface
 
-		public void OnClosed() => ClosedHandler?.Invoke();		
+		public void OnClosed(TResult selection) => ClosedHandler?.Invoke(selection);		
 
 		public bool OnClosing(TResult selection) => ClosingHandler?.Invoke(selection) ?? true;
 

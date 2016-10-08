@@ -1,28 +1,24 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Studiotaiha.Toolkit.Dialog.LocalizedStringProviders;
 
 namespace Studiotaiha.Toolkit.Dialog
 {
-	public static class AlertManagerExtentions
-	{
-
-		static IDialogStringLocalizer stringProvider_ = new DialogStringLocalizers.EnglishDialoStringLocalizer();
-
+    public static class DialogManagerExtentions
+    {
+        public static IDialogLocalizedStringProvider DefaultLocalizedStringProvider { get; } = new EnglishLocalizedStringProvider();
+        
 		/// <summary>
-		/// 文字列プロバイダを設定する。
+		/// Sets the current localized string provider.
 		/// </summary>
-		public static IDialogStringLocalizer StringProvider
-		{
-			get
-			{
-				return stringProvider_;
-			}
-			internal set
-			{
-				stringProvider_ = value;
-			}
-		}
+		public static IDialogLocalizedStringProvider CurrentLocalizedStringProvider { get; set; } = DefaultLocalizedStringProvider;
+
+        public static string GetLocalizedString(string resourceName)
+        {
+            return CurrentLocalizedStringProvider?.GetString(resourceName)
+                ?? DefaultLocalizedStringProvider.GetString(resourceName);
+        }
 
 		#region ErrorMessage
 		public static void ShowErrorMessage(
@@ -31,7 +27,7 @@ namespace Studiotaiha.Toolkit.Dialog
 			string caption = null,
 			Exception ex = null)
 		{
-			dialogManager.ShowMessage(message, caption ?? StringProvider.Error, ex, EDialogType.Error);
+			dialogManager.ShowMessage(message, caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Ok), ex, EDialogType.Error);
 		}
 
 		public static void ShowErrorMessage(
@@ -49,7 +45,7 @@ namespace Studiotaiha.Toolkit.Dialog
 			Exception ex = null,
 			Action onOk = null)
 		{
-			return dialogManager.ShowMessageAsync(message, caption ?? stringProvider_.Error, ex, EDialogType.Error, (selection) => { if (onOk != null) { onOk(); } });
+			return dialogManager.ShowMessageAsync(message, caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Error), ex, EDialogType.Error, (selection) => { if (onOk != null) { onOk(); } });
 		}
 
 		public static Task ShowErrorMessageAsync(
@@ -70,7 +66,7 @@ namespace Studiotaiha.Toolkit.Dialog
 			string caption = null,
 			Exception ex = null)
 		{
-			dialogManager.ShowMessage(message, caption ?? StringProvider.Warning, ex, EDialogType.Warning);
+			dialogManager.ShowMessage(message, caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Warning), ex, EDialogType.Warning);
 		}
 
 		public static void ShowWarningMessage(
@@ -88,7 +84,7 @@ namespace Studiotaiha.Toolkit.Dialog
 			Exception ex = null,
 			Action onOk = null)
 		{
-			return dialogManager.ShowMessageAsync(message, caption ?? StringProvider.Warning, ex, EDialogType.Warning, (selection) => { if (onOk != null) { onOk(); } });
+			return dialogManager.ShowMessageAsync(message, caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Warning), ex, EDialogType.Warning, (selection) => { if (onOk != null) { onOk(); } });
 		}
 
 		public static Task ShowWarningMessageAsync(
@@ -109,7 +105,7 @@ namespace Studiotaiha.Toolkit.Dialog
 			string caption = null,
 			Exception ex = null)
 		{
-			dialogManager.ShowMessage(message, caption ?? StringProvider.Information, ex, EDialogType.Information);
+			dialogManager.ShowMessage(message, caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Information), ex, EDialogType.Information);
 		}
 
 		public static void ShowInformationMessage(
@@ -127,7 +123,7 @@ namespace Studiotaiha.Toolkit.Dialog
 			Exception ex = null,
 			Action onOk = null)
 		{
-			return dialogManager.ShowMessageAsync(message, caption ?? StringProvider.Information, ex, EDialogType.Information, (selection) => { if (onOk != null) { onOk(); } });
+			return dialogManager.ShowMessageAsync(message, caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Information), ex, EDialogType.Information, (selection) => { if (onOk != null) { onOk(); } });
 		}
 
 		public static Task ShowInformationMessageAsync(
@@ -148,7 +144,7 @@ namespace Studiotaiha.Toolkit.Dialog
 			string caption = null,
 			Exception ex = null)
 		{
-			dialogManager.ShowMessage(message, caption ?? StringProvider.Debug, ex, EDialogType.Debug);
+			dialogManager.ShowMessage(message, caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Debug), ex, EDialogType.Debug);
 		}
 
 		public static void ShowDebugMessage(
@@ -166,7 +162,7 @@ namespace Studiotaiha.Toolkit.Dialog
 			Exception ex = null,
 			Action onOk = null)
 		{
-			return dialogManager.ShowMessageAsync(message, caption ?? StringProvider.Debug, ex, EDialogType.Debug, (selection) => { if (onOk != null) { onOk(); } });
+			return dialogManager.ShowMessageAsync(message, caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Debug), ex, EDialogType.Debug, (selection) => { if (onOk != null) { onOk(); } });
 		}
 
 		public static Task ShowDebugMessageAsync(
@@ -186,10 +182,10 @@ namespace Studiotaiha.Toolkit.Dialog
 			string caption = null,
 			Exception ex = null)
 		{
-			var yes = StringProvider.Yes;
-			var no = StringProvider.No;
+			var yes = GetLocalizedString(DialogLocalizerStringResourceNames.Yes);
+			var no = GetLocalizedString(DialogLocalizerStringResourceNames.No);
 			var ret = dialogManager.ShowMessage(message,
-				caption ?? StringProvider.Confirmation,
+				caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Confirmation),
 				ex, EDialogType.Question,
 				yes, no);
 			return (ret == yes);
@@ -202,10 +198,10 @@ namespace Studiotaiha.Toolkit.Dialog
 			Exception ex = null,
 			Action<bool> onSelected = null)
 		{
-			var yes = StringProvider.Yes;
-			var no = StringProvider.No;
+			var yes = GetLocalizedString(DialogLocalizerStringResourceNames.Yes);
+			var no = GetLocalizedString(DialogLocalizerStringResourceNames.No);
 			return dialogManager.ShowMessageAsync(message,
-				caption ?? StringProvider.Confirmation,
+				caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Confirmation),
 				ex, EDialogType.Question,
 				selection => { if (onSelected != null) { onSelected(selection == yes); } },
 				yes, no);
@@ -217,10 +213,10 @@ namespace Studiotaiha.Toolkit.Dialog
 			string caption = null,
 			Exception ex = null)
 		{
-			var ok = StringProvider.Ok;
-			var cancel = StringProvider.Cancel;
+			var ok = GetLocalizedString(DialogLocalizerStringResourceNames.Ok);
+			var cancel = GetLocalizedString(DialogLocalizerStringResourceNames.Cancel);
 			var ret = dialogManager.ShowMessage(message,
-				caption ?? StringProvider.Confirmation,
+				caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Confirmation),
 				ex, EDialogType.Question,
 				ok, cancel);
 			return (ret == ok);
@@ -232,12 +228,12 @@ namespace Studiotaiha.Toolkit.Dialog
 			string caption = null,
 			Exception ex = null,
 			Action<bool> onSelected = null)
-		{
-			var ok = StringProvider.Ok;
-			var cancel = StringProvider.Cancel;
-			return dialogManager.ShowMessageAsync(message,
-				caption ?? StringProvider.Confirmation,
-				ex, EDialogType.Question,
+        {
+            var ok = GetLocalizedString(DialogLocalizerStringResourceNames.Ok);
+            var cancel = GetLocalizedString(DialogLocalizerStringResourceNames.Cancel);
+            return dialogManager.ShowMessageAsync(message,
+                caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Confirmation),
+                ex, EDialogType.Question,
 				selection => { if (onSelected != null) { onSelected(selection == ok); } },
 				ok, cancel);
 		}
@@ -247,13 +243,13 @@ namespace Studiotaiha.Toolkit.Dialog
 			string message,
 			string caption = null,
 			Exception ex = null)
-		{
-			var yes = StringProvider.Yes;
-			var no = StringProvider.No;
-			var cancel = StringProvider.Cancel;
-			var ret = dialogManager.ShowMessage(message,
-				caption ?? StringProvider.Confirmation,
-				ex, EDialogType.Question,
+        {
+            var yes = GetLocalizedString(DialogLocalizerStringResourceNames.Yes);
+            var no = GetLocalizedString(DialogLocalizerStringResourceNames.No);
+            var cancel = GetLocalizedString(DialogLocalizerStringResourceNames.Cancel);
+            var ret = dialogManager.ShowMessage(message,
+                caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Confirmation),
+                ex, EDialogType.Question,
 				yes, no, cancel);
 			if (ret == yes) {
 				return true;
@@ -272,13 +268,13 @@ namespace Studiotaiha.Toolkit.Dialog
 			string caption = null,
 			Exception ex = null,
 			Action<bool?> onSelected = null)
-		{
-			var yes = StringProvider.Yes;
-			var no = StringProvider.No;
-			var cancel = StringProvider.Cancel;
-			return dialogManager.ShowMessageAsync(message,
-				caption ?? StringProvider.Confirmation,
-				ex, EDialogType.Question,
+        {
+            var yes = GetLocalizedString(DialogLocalizerStringResourceNames.Yes);
+            var no = GetLocalizedString(DialogLocalizerStringResourceNames.No);
+            var cancel = GetLocalizedString(DialogLocalizerStringResourceNames.Cancel);
+            return dialogManager.ShowMessageAsync(message,
+                caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Confirmation),
+                ex, EDialogType.Question,
 				selection => {
 					if (onSelected != null) {
 						bool? result = null;
@@ -303,8 +299,8 @@ namespace Studiotaiha.Toolkit.Dialog
 		{
 			var ret = dialogManager.ShowMessage(
 				message,
-				caption ?? StringProvider.Confirmation,
-				ex, EDialogType.Question, selections);
+                caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Confirmation),
+                ex, EDialogType.Question, selections);
 			return ret;
 		}
 
@@ -316,8 +312,8 @@ namespace Studiotaiha.Toolkit.Dialog
 		{
 			var ret = dialogManager.ShowMessage(
 				message,
-				caption ?? StringProvider.Confirmation,
-				null, EDialogType.Question, selections);
+                caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Confirmation),
+                null, EDialogType.Question, selections);
 			return ret;
 		}
 
@@ -331,9 +327,9 @@ namespace Studiotaiha.Toolkit.Dialog
 			params string[] selections)
 		{
 			return dialogManager.ShowMessageAsync(
-				   message,
-				   caption ?? StringProvider.Confirmation,
-				   ex, EDialogType.Question, onSelected, selections);
+                message,
+                caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Confirmation),
+                ex, EDialogType.Question, onSelected, selections);
 		}
 
 		public static Task<string> ShowSelectionsAsync(
@@ -344,15 +340,15 @@ namespace Studiotaiha.Toolkit.Dialog
 			params string[] selections)
 		{
 			return dialogManager.ShowMessageAsync(
-				   message,
-				   caption ?? StringProvider.Confirmation,
-				   null, EDialogType.Question, onSelected, selections);
+                message,
+                caption ?? GetLocalizedString(DialogLocalizerStringResourceNames.Confirmation),
+                null, EDialogType.Question, onSelected, selections);
 		}
 		#endregion
 
 		static DialogSelection OkSelection(int id, bool isDefault) => new DialogSelection {
 			Id = id,
-			Content = "OK",
+			Content = GetLocalizedString(DialogLocalizerStringResourceNames.Ok),
 			IsDefault = isDefault
 		};
 

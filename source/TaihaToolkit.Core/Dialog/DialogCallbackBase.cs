@@ -5,11 +5,11 @@
 	/// </summary>
 	public class DialogCallbackBase<TResult> : IDialogCallback<TResult>
 	{
-		virtual public bool OnClosing(TResult selection) => true;
+		public virtual bool OnClosing(TResult selection) => true;
 
-		virtual public void OnClosed() { }
+		public virtual void OnClosed(TResult selection) { }
 
-		virtual public void OnCopy() { }
+		public virtual void OnCopy() { }
 		
 		public bool SupportsCopy { get; set; }
 	}
