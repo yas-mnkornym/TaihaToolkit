@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle("TaihaToolkit.Rest")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("RESTでも大破してすまない")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("スタジオ大破")]
 [assembly: AssemblyProduct("TaihaToolkit.Rest")]
-[assembly: AssemblyCopyright("Copyright (C)  2016")]
+[assembly: AssemblyCopyright("Copyright (C) スタジオ大破 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("ja")]
