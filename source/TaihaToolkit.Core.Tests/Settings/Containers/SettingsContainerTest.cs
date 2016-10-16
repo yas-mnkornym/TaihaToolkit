@@ -35,7 +35,6 @@ namespace Studiotaiha.Toolkit.Core.Tests.Settings.Containers
 					String = Guid.NewGuid().ToString(),
 					Float = 5.5f,
 				},
-				["null"] = null,
 			};
 
 			var container = new SettingsContainer(tag);
@@ -89,7 +88,6 @@ namespace Studiotaiha.Toolkit.Core.Tests.Settings.Containers
 				["minusInt"] = -1,
 				["zeroInt"] = 0,
 				["plusInto"] = 1,
-				["minusDouble"] = -1.5,
 				["zeroDouble"] = 0.0,
 				["plusDouble"] = 1.5,
 				["emptystring"] = "",
@@ -97,6 +95,7 @@ namespace Studiotaiha.Toolkit.Core.Tests.Settings.Containers
 				["DateTime"] = DateTime.Now,
 				["DateTiemOffest"] = DateTimeOffset.Now,
 				["Guid"] = Guid.NewGuid(),
+				["minusDouble"] = -1.5,
 				["Class"] = new SettingsTestClass {
 					Test = new SettingsTestClass {
 						Int = 10,

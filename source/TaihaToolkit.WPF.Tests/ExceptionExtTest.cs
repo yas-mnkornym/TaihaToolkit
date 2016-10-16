@@ -13,7 +13,7 @@ namespace Studiotaiha.Toolkit.WPF.Tests
 		[ClassInitialize]
 		public static void Initialize(TestContext context)
 		{
-			TaihaToolkit.RegisterComponent(WPFComponent.Instance);
+			TaihaToolkit.Current.RegisterComponent(WPFComponent.Instance);
 		}
 
 		[TestMethod]

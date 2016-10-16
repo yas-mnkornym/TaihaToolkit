@@ -34,7 +34,7 @@ namespace Studiotaiha.Toolkit.Settings.Containers
 
 		public void Set<T>(string key, T value)
 		{
-			this.SetValue(
+			SetValue(
 				value,
 				actBeforeChange: (oldValue, newValue) => {
 					SettingChanging?.Invoke(this, new SettingChangeEventArgs(Tag, key, oldValue, newValue));

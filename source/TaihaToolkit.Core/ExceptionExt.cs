@@ -14,11 +14,11 @@ namespace Studiotaiha.Toolkit
 
 		static ExceptionExt()
 		{
-			TaihaToolkit.Instance.ComponentRegistered += (_, component) => {
+			TaihaToolkit.Current.ComponentRegistered += (_, component) => {
 				RegisterExceptionsFromComponent(component);
 			};
 
-			foreach (var component in TaihaToolkit.Instance.Components) {
+			foreach (var component in TaihaToolkit.Current.Components) {
 				RegisterExceptionsFromComponent(component);
 			}
 		}
