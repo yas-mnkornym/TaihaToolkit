@@ -10,7 +10,7 @@ using Studiotaiha.Toolkit.ConsoleUtils;
 namespace Studiotaiha.Toolkit.Dialog
 {
     [ComponentImplementation(typeof(IDialogManager), int.MaxValue)]
-    public class DialogManager : IDialogManager
+    public class DialogManager : NotificationObject, IDialogManager
 	{
         public static string LocalizedStringNameExceptionInfo { get; } = "ExceptionInfo";
         public static string LocalizedStringDefaultExceptionInfo { get; } = "-Exception Info-";
@@ -56,23 +56,20 @@ namespace Studiotaiha.Toolkit.Dialog
 			return result ?? Console.ForegroundColor;
 		}
 
-		CultureInfo culture;
+		CultureInfo culture_;
 		public CultureInfo Culture
 		{
 			get
 			{
-				return culture;
+				return culture_;
 			}
 			set
 			{
-				if (culture != value) {
-					culture = value;
+				if (SetValue(ref culture_, value)) {
 					LocalizedStringProvider = DialogService.Instance.GetLocalizedStringProvider(value);
 				}
 			}
 		}
-
-		public event PropertyChangedEventHandler PropertyChanged;
 
 		public DialogSelection ShowDialog(Action<IDialogConfig<DialogSelection>> initializer, EDialogType dialogType, params DialogSelection[] selections)
 		{
