@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("スタジオ大破")]
 [assembly: AssemblyProduct("TaihaToolkit.WPF")]
-[assembly: AssemblyCopyright("Copyright (C) スタジオ大破 2015")]
+[assembly: AssemblyCopyright("Copyright © スタジオ大破 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
