@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <None Include="TaihaToolkit.Rest..nuspec" />
+    <None Include="TaihaToolkit.Rest.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clients\HeaderBag.cs" />

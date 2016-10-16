@@ -57,7 +57,7 @@ namespace Studiotaiha.Toolkit.Core.Tests.Settings.Containers
 			
 
 			var expectedCount = container.Settings.Count();
-			foreach (var data in testData) {
+			foreach (var data in testData.TakeWhile(x => x.Value != null)) {
 				container.Remove(data.Key);
 				expectedCount--;
 				Assert.AreEqual(expectedCount, container.Settings.Count());
