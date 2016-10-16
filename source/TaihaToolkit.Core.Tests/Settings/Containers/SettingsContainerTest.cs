@@ -51,9 +51,9 @@ namespace Studiotaiha.Toolkit.Core.Tests.Settings.Containers
 				Assert.AreEqual(data.Value, actual, data.Key);
 			}
 
-			Assert.AreEqual(testData.Count-1, container.Settings.Count());
-			Assert.AreEqual(testData.Count-1, changingCalledCount);
-			Assert.AreEqual(testData.Count-1, changedCalledCount);
+			Assert.AreEqual(testData.Count, container.Settings.Count());
+			Assert.AreEqual(testData.Count, changingCalledCount);
+			Assert.AreEqual(testData.Count, changedCalledCount);
 			
 
 			var expectedCount = container.Settings.Count();
@@ -70,7 +70,7 @@ namespace Studiotaiha.Toolkit.Core.Tests.Settings.Containers
 				var actual = container.Get<object>(data.Key);
 			}
 
-			Assert.AreEqual(testData.Count-1, container.Settings.Count());
+			Assert.AreEqual(testData.Count, container.Settings.Count());
 			container.Clear();
 			Assert.AreEqual(0, container.Settings.Count());
 		}
