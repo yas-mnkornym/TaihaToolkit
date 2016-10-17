@@ -13,7 +13,7 @@ namespace Studiotaiha.Toolkit.Core.Rx.Tests.Settings
 		[ClassInitialize]
 		public static void ClassInitialize(TestContext testContext)
 		{
-			TaihaToolkit.RegisterComponents(RxComponent.Instance);
+			TaihaToolkit.Current.RegisterComponents(RxComponent.Instance);
 		}
 
 		[TestMethod]

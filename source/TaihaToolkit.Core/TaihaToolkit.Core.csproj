@@ -36,22 +36,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Alert\AlertManagerExt.cs" />
-    <Compile Include="Alert\AlertService.cs" />
-    <Compile Include="Alert\CaptionMessageKind.cs" />
-    <Compile Include="Alert\DelegateDialogCallback.cs" />
-    <Compile Include="Alert\DialogCallbackBase.cs" />
-    <Compile Include="Alert\EnglishStringProvider.cs" />
-    <Compile Include="Alert\IAlertManager.cs" />
-    <Compile Include="Alert\IAlertStringProvider.cs" />
-    <Compile Include="Alert\IDialogCallback.cs" />
-    <Compile Include="Alert\IDialogConfig.cs" />
+    <Compile Include="Dialog\DialogManagerExtentions.cs" />
+    <Compile Include="Dialog\DialogService.cs" />
+    <Compile Include="Dialog\DelegateDialogCallback.cs" />
+    <Compile Include="Dialog\DialogCallbackBase.cs" />
+    <Compile Include="Dialog\DialogLocalizedStringProviderAttribute.cs" />
+    <Compile Include="Dialog\LocalizedStringProviders\EnglishLocalizedStringProvider.cs" />
+    <Compile Include="Dialog\LocalizedStringProviders\JapaneseLocalizedStringProvider.cs" />
+    <Compile Include="Dialog\DialogSelection.cs" />
+    <Compile Include="Dialog\ECommonSelection.cs" />
+    <Compile Include="Dialog\EDialogType.cs" />
+    <Compile Include="Dialog\IDialogManager.cs" />
+    <Compile Include="Dialog\IDialogLocalizedStringProvider.cs" />
+    <Compile Include="Dialog\IDialogCallback.cs" />
+    <Compile Include="Dialog\IDialogConfig.cs" />
     <Compile Include="Composition\ComponentImplementationAttribute.cs" />
     <Compile Include="Composition\ComponentImplementationLoader.cs" />
     <Compile Include="Composition\IComponent.cs" />
     <Compile Include="CoreComponent.cs" />
     <Compile Include="Csv\CsvMaker.cs" />
     <Compile Include="Csv\CsvSplitter.cs" />
+    <Compile Include="Dialog\LocalizedStringProviders\ResourceBagLocalizedStringProviderBase.cs" />
     <Compile Include="NotificationObjectWithPropertyBag.cs" />
     <Compile Include="Dispatchable.cs" />
     <Compile Include="IDispatcher.cs" />
@@ -66,6 +71,9 @@
     <Compile Include="Logging\LoggerExtentions.cs" />
     <Compile Include="Logging\LoggingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\EnumUtilities\CombinedFlagAttribute.cs" />
+    <Compile Include="Utilities\EnumUtilities\EnumAnnotationAttribute.cs" />
+    <Compile Include="Utilities\EnumUtilities\EnumExtensions.cs" />
     <Compile Include="Settings\Containers\ProxySettingsContainer.cs" />
     <Compile Include="Settings\Containers\SettingsContainer.cs" />
     <Compile Include="Settings\ISettingsContainer.cs" />

@@ -35,7 +35,6 @@ namespace Studiotaiha.Toolkit.Core.Tests.Settings.Containers
 					String = Guid.NewGuid().ToString(),
 					Float = 5.5f,
 				},
-				["null"] = null,
 			};
 
 			var container = new SettingsContainer(tag);
@@ -52,9 +51,9 @@ namespace Studiotaiha.Toolkit.Core.Tests.Settings.Containers
 				Assert.AreEqual(data.Value, actual, data.Key);
 			}
 
-			Assert.AreEqual(testData.Count-1, container.Settings.Count());
-			Assert.AreEqual(testData.Count-1, changingCalledCount);
-			Assert.AreEqual(testData.Count-1, changedCalledCount);
+			Assert.AreEqual(testData.Count, container.Settings.Count());
+			Assert.AreEqual(testData.Count, changingCalledCount);
+			Assert.AreEqual(testData.Count, changedCalledCount);
 			
 
 			var expectedCount = container.Settings.Count();
@@ -71,7 +70,7 @@ namespace Studiotaiha.Toolkit.Core.Tests.Settings.Containers
 				var actual = container.Get<object>(data.Key);
 			}
 
-			Assert.AreEqual(testData.Count-1, container.Settings.Count());
+			Assert.AreEqual(testData.Count, container.Settings.Count());
 			container.Clear();
 			Assert.AreEqual(0, container.Settings.Count());
 		}
@@ -89,7 +88,6 @@ namespace Studiotaiha.Toolkit.Core.Tests.Settings.Containers
 				["minusInt"] = -1,
 				["zeroInt"] = 0,
 				["plusInto"] = 1,
-				["minusDouble"] = -1.5,
 				["zeroDouble"] = 0.0,
 				["plusDouble"] = 1.5,
 				["emptystring"] = "",
@@ -97,6 +95,7 @@ namespace Studiotaiha.Toolkit.Core.Tests.Settings.Containers
 				["DateTime"] = DateTime.Now,
 				["DateTiemOffest"] = DateTimeOffset.Now,
 				["Guid"] = Guid.NewGuid(),
+				["minusDouble"] = -1.5,
 				["Class"] = new SettingsTestClass {
 					Test = new SettingsTestClass {
 						Int = 10,
