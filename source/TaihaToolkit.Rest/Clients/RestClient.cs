@@ -116,7 +116,7 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 
 					// Parse response
 					var requestResult = new RequestResult(response);
-					if ((restResult.Succeeded = response.IsSuccessStatusCode)) {
+					if (restResult.Succeeded = await request.IsSuccessResultAsync(response.StatusCode, response.IsSuccessStatusCode, requestResult)){
 						restResult.SuccessResult = await request.ParseSuccessResultAsync(response.StatusCode, requestResult);
 					}
 					else {

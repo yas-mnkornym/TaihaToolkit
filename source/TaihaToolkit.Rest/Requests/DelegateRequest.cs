@@ -15,6 +15,7 @@ namespace Studiotaiha.Toolkit.Rest.Requests
 		public Func<IParameterBag, TParameter, Task> ConfigureParameterAsyncHandler { get; set; }
 		public Func<HttpStatusCode, IRequestResult, Task<TFailureResult>> ParseFailureResultAsyncHandler { get; set; }
 		public Func<HttpStatusCode, IRequestResult, Task<TSuccessResult>> ParseSuccessResultAsyncHandler { get; set; }
+		public Func<HttpStatusCode, bool, IRequestResult, Task<bool>> IsSuccessResultAsyncHandler { get; set; }
 
 		public DelegateRequest(
 			HttpMethod method,
@@ -49,7 +50,7 @@ namespace Studiotaiha.Toolkit.Rest.Requests
 				throw new RestRequestFailureException(statusCode, await requestResult.ReadAsStringAsync());
 			}
 		}
-		
+
 		public async Task<TSuccessResult> ParseSuccessResultAsync(HttpStatusCode statusCode, IRequestResult requestResult)
 		{
 			if (ParseSuccessResultAsyncHandler != null) {
@@ -57,6 +58,16 @@ namespace Studiotaiha.Toolkit.Rest.Requests
 			}
 			else {
 				return default(TSuccessResult);
+			}
+		}
+
+		public async Task<bool> IsSuccessResultAsync(HttpStatusCode statusCode, bool isSuccessStatusCode, IRequestResult requestResult)
+		{
+			if (IsSuccessResultAsyncHandler != null) {
+				return await IsSuccessResultAsyncHandler(statusCode, isSuccessStatusCode, requestResult);
+			}
+			else {
+				return isSuccessStatusCode;
 			}
 		}
 	}
