@@ -23,7 +23,10 @@ namespace Studiotaiha.Toolkit.Rest.ResultParsers
 		public async Task<TResult> ParseAsync<TResult>(IRequestResult result)
 		{
 			using (var stream = await result.ReadAsStreamAsync()) {
-				return (TResult)new DataContractJsonSerializer(typeof(TResult), KnownTypes).ReadObject(stream);
+				var serializer = KnownTypes?.Length > 0
+					? new DataContractJsonSerializer(typeof(TResult), KnownTypes)
+					: new DataContractJsonSerializer(typeof(TResult));
+				return (TResult)serializer.ReadObject(stream);
 			}
 		}
 	}

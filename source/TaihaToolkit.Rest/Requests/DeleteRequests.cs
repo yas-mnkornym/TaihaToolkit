@@ -25,13 +25,13 @@ namespace Studiotaiha.Toolkit.Rest.Requests
 		}
 	}
 
-	public class NoFaiulreResultDeleteRequest<TParameter, TSuccessResult> : DeleteRequest<TParameter, TSuccessResult, object>
+	public class NoFailureResultDeleteRequest<TParameter, TSuccessResult> : DeleteRequest<TParameter, TSuccessResult, object>
 	{
-		protected NoFaiulreResultDeleteRequest(string path) : base(path)
+		protected NoFailureResultDeleteRequest(string path) : base(path)
 		{
 		}
 
-		protected NoFaiulreResultDeleteRequest(string path, string[] acceptContentTypes) : base(path, acceptContentTypes)
+		protected NoFailureResultDeleteRequest(string path, string[] acceptContentTypes) : base(path, acceptContentTypes)
 		{
 		}
 
