@@ -9,7 +9,7 @@ using Studiotaiha.Toolkit.Rest.ResultParsers;
 namespace StudioTaiha.Toolkit.Showcase.ConsoleApp.Scenarios.Rest.Wabisabi
 {
 	[ResultParser(typeof(DataContractJsonSerializerResultParser), true, false)]
-    class WabisabiLoginRequest : NoFaiulreResultPostRequest<WabisabiLoginRequestParameter, WabisabiAccessToken>
+    class WabisabiLoginRequest : NoFailureResultPostRequest<WabisabiLoginRequestParameter, WabisabiAccessToken>
     {
         public WabisabiLoginRequest()
             : base("api/auth/token")

@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
+using Studiotaiha.Toolkit.Rest.ResultParsers;
 
 namespace Studiotaiha.Toolkit.Rest.Requests
 {
@@ -101,7 +102,7 @@ namespace Studiotaiha.Toolkit.Rest.Requests
 				return (IRequestResultParser)Activator.CreateInstance(parserType);
 			}
 			else {
-				return null;
+				return new DataContractJsonSerializerResultParser();
 			}
 		}
 	}
