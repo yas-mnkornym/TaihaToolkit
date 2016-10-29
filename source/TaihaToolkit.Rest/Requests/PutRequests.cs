@@ -25,13 +25,13 @@ namespace Studiotaiha.Toolkit.Rest.Requests
 		}
 	}
 
-	public class NoFaiulreResultPutRequest<TParameter, TSuccessResult> : PutRequest<TParameter, TSuccessResult, object>
+	public class NoFailureResultPutRequest<TParameter, TSuccessResult> : PutRequest<TParameter, TSuccessResult, object>
 	{
-		protected NoFaiulreResultPutRequest(string path) : base(path)
+		protected NoFailureResultPutRequest(string path) : base(path)
 		{
 		}
 
-		protected NoFaiulreResultPutRequest(string path, string[] acceptContentTypes) : base(path, acceptContentTypes)
+		protected NoFailureResultPutRequest(string path, string[] acceptContentTypes) : base(path, acceptContentTypes)
 		{
 		}
 
