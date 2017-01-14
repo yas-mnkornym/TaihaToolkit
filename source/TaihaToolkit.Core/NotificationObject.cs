@@ -2,9 +2,11 @@
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 
 namespace Studiotaiha.Toolkit
 {
+	[DataContract]
 	public class NotificationObject : Dispatchable, INotifyPropertyChanged
 	{
 		public NotificationObject(IDispatcher dispatcher = null)
