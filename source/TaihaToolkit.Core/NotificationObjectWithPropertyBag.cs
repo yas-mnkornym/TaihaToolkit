@@ -9,11 +9,17 @@ namespace Studiotaiha.Toolkit
 	public class NotificationObjectWithPropertyBag : NotificationObject
 	{
 		[IgnoreDataMember]
-		protected IDictionary<string, object> PropertyBag { get; } = new Dictionary<string, object>();
+		protected IDictionary<string, object> PropertyBag { get; private set; } = new Dictionary<string, object>();
 
 		public NotificationObjectWithPropertyBag(IDispatcher dispatcher = null)
 			: base(dispatcher)
 		{ }
+
+		[OnDeserialized]
+		void OnDeserialized()
+		{
+			PropertyBag = new Dictionary<string, object>();
+		}
 
 		/// <summary>
 		/// Set a value to the property bag.
