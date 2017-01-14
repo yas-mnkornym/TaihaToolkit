@@ -16,7 +16,7 @@ namespace Studiotaiha.Toolkit
 		{ }
 
 		[OnDeserialized]
-		void OnDeserialized()
+		void OnDeserialized(StreamingContext context)
 		{
 			PropertyBag = new Dictionary<string, object>();
 		}
