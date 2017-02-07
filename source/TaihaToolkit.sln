@@ -27,8 +27,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Rest", "TaihaT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Rest.Tests", "TaihaToolkit.Rest.Tests\TaihaToolkit.Rest.Tests.csproj", "{D096B6C9-2568-44F8-B03A-88CC81DAE86C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.UWP", "TaihaToolkit.UWP\TaihaToolkit.UWP.csproj", "{610B9108-5B09-4876-8307-B2EF80CF18DA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -201,22 +199,6 @@ Global
 		{D096B6C9-2568-44F8-B03A-88CC81DAE86C}.Release|x64.Build.0 = Release|Any CPU
 		{D096B6C9-2568-44F8-B03A-88CC81DAE86C}.Release|x86.ActiveCfg = Release|Any CPU
 		{D096B6C9-2568-44F8-B03A-88CC81DAE86C}.Release|x86.Build.0 = Release|Any CPU
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Debug|ARM.ActiveCfg = Debug|ARM
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Debug|ARM.Build.0 = Debug|ARM
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Debug|x64.ActiveCfg = Debug|x64
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Debug|x64.Build.0 = Debug|x64
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Debug|x86.ActiveCfg = Debug|x86
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Debug|x86.Build.0 = Debug|x86
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Release|ARM.ActiveCfg = Release|ARM
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Release|ARM.Build.0 = Release|ARM
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Release|x64.ActiveCfg = Release|x64
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Release|x64.Build.0 = Release|x64
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Release|x86.ActiveCfg = Release|x86
-		{610B9108-5B09-4876-8307-B2EF80CF18DA}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
