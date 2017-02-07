@@ -39,15 +39,17 @@ namespace Studiotaiha.Toolkit
 			if (propertyName == null) { throw new ArgumentNullException(nameof(propertyName)); }
 
 			object oldValueObject;
-			PropertyBag.TryGetValue(propertyName, out oldValueObject);
+			var ret = PropertyBag.TryGetValue(propertyName, out oldValueObject);
 
-			var oldValue = oldValueObject is T
+			var oldValue = ret
 				? (T)oldValueObject
 				: default(T);
 
-			var isChanged = value == null
-				? oldValueObject != null
-				: !value.Equals(oldValue);
+			var isChanged = !ret
+				? true
+				: value == null
+					? oldValueObject != null
+					: !value.Equals(oldValue);
 
 			if (isChanged) {
 				actBeforeChange?.Invoke(oldValue, value);
@@ -74,12 +76,12 @@ namespace Studiotaiha.Toolkit
 		{
 			if (propertyName == null) { throw new ArgumentNullException(nameof(propertyName)); }
 
-			object oldValueObject;
-			PropertyBag.TryGetValue(propertyName, out oldValueObject);
+			object valueObject;
+			if (PropertyBag.TryGetValue(propertyName, out valueObject)) {
+				return (T)valueObject;
+			}
 
-			return oldValueObject is T
-				? (T)oldValueObject
-				: defaultValue;
+			return defaultValue;
 		}
 	}
 }
