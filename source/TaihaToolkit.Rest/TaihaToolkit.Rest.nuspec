@@ -12,8 +12,7 @@
 	</metadata>
   <dependencies>
     <group targetFramework=".NETStandard1.0">
-      <depdenency id="Microsoft.NETCore.Portable.Compatibility" version="1.0.1" />
-      <depdenency id="NETStandard.Library" version="1.6.0" />
+      <depdenency id="NETStandard.Library" version="1.6.1" />
       <depdenency id="System.Runtime.Serialization.Json" version="4.3.0" />
     </group>
   </dependencies>
