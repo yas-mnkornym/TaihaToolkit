@@ -10,4 +10,10 @@
 		<projectUrl>https://github.com/yas-mnkornym/TaihaToolkit</projectUrl>
 		<licenseUrl>https://github.com/yas-mnkornym/TaihaToolkit/blob/master/LICENSE</licenseUrl>
 	</metadata>
+  <dependencies>
+    <group targetFramework=".NETStandard1.0">
+      <depdenency id="NETStandard.Library" version="1.6.1" />
+      <depdenency id="System.Runtime.Serialization.Json" version="4.3.0" />
+    </group>
+  </dependencies>
 </package>

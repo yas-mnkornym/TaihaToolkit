@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace Studiotaiha.Toolkit
 {
+	[DataContract]
 	public class Dispatchable
 	{
 		/// <summary>
 		/// Gets or sets the dispatcher to be used to dispatch actions.
 		/// </summary>
+		[IgnoreDataMember]
 		public IDispatcher Dispatcher { get; protected set; }
 
 		/// <summary>

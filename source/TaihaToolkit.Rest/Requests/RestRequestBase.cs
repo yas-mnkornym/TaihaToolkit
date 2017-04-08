@@ -105,5 +105,10 @@ namespace Studiotaiha.Toolkit.Rest.Requests
 				return new DataContractJsonSerializerResultParser();
 			}
 		}
+
+		public virtual Task<bool> IsSuccessResultAsync(HttpStatusCode statusCode, bool isSuccessStatusCode, IRequestResult requestResult)
+		{
+			return Task.FromResult(isSuccessStatusCode);
+		}
 	}
 }

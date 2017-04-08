@@ -35,15 +35,19 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 				await Authenticator.AuthenticateAsync(this, request, headerBag, parameterBag);
 			}
 
+			// Configure header
+			await request.ConfigureHeaderAsync(headerBag, parameter);
+
+			// Concigure parameter
+			await request.ConfigureParameterAsync(parameterBag, parameter);
+
 			// Construct actual request Uri
 			var requestUri = ConstructRequestUri(BaseUri, request.Path, parameterBag);
 
 			// Construct request message, then request
 			using (HttpClient client = new HttpClient())
 			using (var requestMessage = new HttpRequestMessage(request.Method, requestUri)) {
-				// Configure header
-				await request.ConfigureHeaderAsync(headerBag, parameter);
-
+				
 				bool isUserAgentChanged = false;
 				foreach (var kv in headerBag) {
 					var key = kv.Key;
@@ -68,7 +72,7 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 						requestMessage.Headers.Add(key, value);
 					}
 				}
-
+				
 				// Confiure User-Agent if needed
 				if (!isUserAgentChanged && !string.IsNullOrWhiteSpace(UserAgent)) {
 					client.DefaultRequestHeaders.Add(UserAgentHeaderKey, UserAgent);
@@ -81,10 +85,6 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 						requestMessage.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptContentType));
 					}
 				}
-
-
-				// Concigure parameter
-				await request.ConfigureParameterAsync(parameterBag, parameter);
 
 				// Configure Body
 				if (parameterBag.RequestBodyType == ERequestBodyType.ApplicationXWwwFormUrlEncoded) {
@@ -116,7 +116,7 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 
 					// Parse response
 					var requestResult = new RequestResult(response);
-					if ((restResult.Succeeded = response.IsSuccessStatusCode)) {
+					if (restResult.Succeeded = await request.IsSuccessResultAsync(response.StatusCode, response.IsSuccessStatusCode, requestResult)){
 						restResult.SuccessResult = await request.ParseSuccessResultAsync(response.StatusCode, requestResult);
 					}
 					else {

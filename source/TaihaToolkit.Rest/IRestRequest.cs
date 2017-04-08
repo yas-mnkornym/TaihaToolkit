@@ -9,6 +9,7 @@ namespace Studiotaiha.Toolkit.Rest
 		HttpMethod Method { get; }
 		string Path { get; }
 		string[] AcceptContentTypes { get; }
+		Task<bool> IsSuccessResultAsync(HttpStatusCode statusCode, bool isSuccessStatusCode, IRequestResult requestResult);
 	}
 
 	public interface IRestRequest<TParameter, TSuccessResult, TFailureResult> : IRestRequest

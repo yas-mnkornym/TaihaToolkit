@@ -21,7 +21,7 @@ namespace Studiotaiha.Toolkit.Core.Rx.Tests.Logging
 			var logStrings = Enumerable.Range(1, 1000)
 				.Select(x => Guid.NewGuid().ToString())
 				.ToArray();
-			Queue<string> queue = new Queue<string>(logStrings);
+			var queue = new Queue<string>(logStrings);
 
 			var logger = LoggingService.Current.GetLogger(this);
 			Assert.IsNotNull(logger);
