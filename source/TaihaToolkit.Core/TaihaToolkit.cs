@@ -19,7 +19,6 @@ namespace Studiotaiha.Toolkit
 		
 		public static Guid ServiceIdDialog { get; } = new Guid("F715924A-5BE4-4AD7-A55C-5D65F4C91ACB");
 		public static Guid ServiceIdLogging { get; } = new Guid("FAB5D959-4669-4609-95C7-C11ACED408C8");
-		public static Guid ServiceIdSettings { get; } = new Guid("D8C079FF-C37B-461F-BF3E-8280733F58E6");
 
 		#endregion
 		

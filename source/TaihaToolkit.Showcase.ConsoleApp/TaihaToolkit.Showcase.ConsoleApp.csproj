@@ -31,6 +31,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseBeta|AnyCPU'">
+    <OutputPath>bin\ReleaseBeta\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,12 +80,16 @@
       <Name>TaihaToolkit.ConsoleApp</Name>
     </ProjectReference>
     <ProjectReference Include="..\TaihaToolkit.Core\TaihaToolkit.Core.csproj">
-      <Project>{238f7b1b-eb78-429b-a97d-a951ba6693bf}</Project>
+      <Project>{a25685c9-c86c-4820-8faa-715e25c65b2f}</Project>
       <Name>TaihaToolkit.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\TaihaToolkit.Rest\TaihaToolkit.Rest.csproj">
-      <Project>{9bbb07e9-7800-414f-a309-2e1d7f885795}</Project>
+      <Project>{c63fd4e8-0c1a-401c-b4e1-205d187695f4}</Project>
       <Name>TaihaToolkit.Rest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaihaToolkit.Settings\TaihaToolkit.Settings.csproj">
+      <Project>{5f0abc6e-be6d-4726-8bcc-e8b3f348012e}</Project>
+      <Name>TaihaToolkit.Settings</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

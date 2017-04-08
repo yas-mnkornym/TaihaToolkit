@@ -29,6 +29,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseBeta|AnyCPU'">
+    <OutputPath>bin\ReleaseBeta\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,13 +56,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TaihaToolkit.Core\TaihaToolkit.Core.csproj">
-      <Project>{238f7b1b-eb78-429b-a97d-a951ba6693bf}</Project>
-      <Name>TaihaToolkit.Core</Name>
-    </ProjectReference>
+    <None Include="TaihaToolkit.ConsoleApp.nuspec" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="TaihaToolkit.ConsoleApp.nuspec" />
+    <ProjectReference Include="..\TaihaToolkit.Core\TaihaToolkit.Core.csproj">
+      <Project>{a25685c9-c86c-4820-8faa-715e25c65b2f}</Project>
+      <Name>TaihaToolkit.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

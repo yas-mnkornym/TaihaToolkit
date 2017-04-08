@@ -36,6 +36,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseBeta|AnyCPU'">
+    <OutputPath>bin\ReleaseBeta\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -84,20 +93,28 @@
     <Compile Include="Settings\SettingsExtensionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TaihaToolkit.Core.Rx\TaihaToolkit.Core.Rx.csproj">
-      <Project>{15201798-b9db-4999-9fa6-ee7e96505677}</Project>
-      <Name>TaihaToolkit.Core.Rx</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TaihaToolkit.Core\TaihaToolkit.Core.csproj">
-      <Project>{238f7b1b-eb78-429b-a97d-a951ba6693bf}</Project>
-      <Name>TaihaToolkit.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TaihaToolkit.Core\TaihaToolkit.Core.csproj">
+      <Project>{a25685c9-c86c-4820-8faa-715e25c65b2f}</Project>
+      <Name>TaihaToolkit.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaihaToolkit.Logging.Rx\TaihaToolkit.Logging.Rx.csproj">
+      <Project>{c903de05-9a93-4095-8392-c04f2ec0b297}</Project>
+      <Name>TaihaToolkit.Logging.Rx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaihaToolkit.Settings.Rx\TaihaToolkit.Settings.Rx.csproj">
+      <Project>{2b564d82-fe9f-403b-86f1-6b56ff2f58ef}</Project>
+      <Name>TaihaToolkit.Settings.Rx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaihaToolkit.Settings\TaihaToolkit.Settings.csproj">
+      <Project>{5f0abc6e-be6d-4726-8bcc-e8b3f348012e}</Project>
+      <Name>TaihaToolkit.Settings</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
