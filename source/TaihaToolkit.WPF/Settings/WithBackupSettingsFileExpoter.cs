@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Studiotaiha.Toolkit.Settings;
 
 namespace Studiotaiha.Toolkit.Settings
 {
@@ -30,7 +24,9 @@ namespace Studiotaiha.Toolkit.Settings
 			TargetFilePath = targetFilePath;
 			TempFilePath = tempFilePath;
 			Container = container;
+			Serializer = serializer;
 		}
+
 		public WithBackupSettingsFileExpoter(
 			string targetFilePath,
 			ISettingsContainer container,

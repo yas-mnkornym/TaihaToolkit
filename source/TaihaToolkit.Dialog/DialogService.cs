@@ -8,6 +8,8 @@ namespace Studiotaiha.Toolkit.Dialog
 {
     public sealed class DialogService
 	{
+		public static Guid ServiceIdDialog { get; } = new Guid("F715924A-5BE4-4AD7-A55C-5D65F4C91ACB");
+
 		#region Singleton
 
 		static DialogService instance_;
@@ -33,6 +35,7 @@ namespace Studiotaiha.Toolkit.Dialog
 
 		private DialogService()
 		{
+			TaihaToolkit.Current.RegisterComponent(DialogComponent.Instance);
 			RegisterLocalizerGenerator(CultureInfo.InvariantCulture, () => new EnglishLocalizedStringProvider());
 			RegisterLocalizerGenerator(new CultureInfo("ja-jp"), () => new JapaneseLocalizedStringProvider());
 			RegisterLocalizerGenerator(new CultureInfo("en-us"), () => new EnglishLocalizedStringProvider());
