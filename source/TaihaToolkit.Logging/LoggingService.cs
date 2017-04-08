@@ -5,6 +5,7 @@ namespace Studiotaiha.Toolkit.Logging
 {
 	public class LoggingService
 	{
+		public static Guid ServiceIdLogging { get; } = new Guid("FAB5D959-4669-4609-95C7-C11ACED408C8");
 		public static string RootLoggerTag { get; } = "root";
 
 		#region Singleton

@@ -83,6 +83,10 @@
       <Project>{a25685c9-c86c-4820-8faa-715e25c65b2f}</Project>
       <Name>TaihaToolkit.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TaihaToolkit.Dialog\TaihaToolkit.Dialog.csproj">
+      <Project>{8f2c9b65-85ff-45ff-b548-c51675248a57}</Project>
+      <Name>TaihaToolkit.Dialog</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TaihaToolkit.Rest\TaihaToolkit.Rest.csproj">
       <Project>{c63fd4e8-0c1a-401c-b4e1-205d187695f4}</Project>
       <Name>TaihaToolkit.Rest</Name>

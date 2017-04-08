@@ -13,14 +13,6 @@ namespace Studiotaiha.Toolkit
 		public static TaihaToolkit Current => current_ ?? (current_ = new TaihaToolkit());
 
 		#endregion // Singleton
-
-
-		#region Static values
-		
-		public static Guid ServiceIdDialog { get; } = new Guid("F715924A-5BE4-4AD7-A55C-5D65F4C91ACB");
-		public static Guid ServiceIdLogging { get; } = new Guid("FAB5D959-4669-4609-95C7-C11ACED408C8");
-
-		#endregion
 		
 		private TaihaToolkit()
 		{

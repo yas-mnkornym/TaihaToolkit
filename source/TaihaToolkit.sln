@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Logging.Rx", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Logging", "TaihaToolkit.Logging\TaihaToolkit.Logging.csproj", "{D506616E-322E-4C1B-846C-92646B95A8CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Dialog", "TaihaToolkit.Dialog\TaihaToolkit.Dialog.csproj", "{8F2C9B65-85FF-45FF-B548-C51675248A57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -363,6 +365,30 @@ Global
 		{D506616E-322E-4C1B-846C-92646B95A8CF}.ReleaseBeta|x64.Build.0 = Release|Any CPU
 		{D506616E-322E-4C1B-846C-92646B95A8CF}.ReleaseBeta|x86.ActiveCfg = Release|Any CPU
 		{D506616E-322E-4C1B-846C-92646B95A8CF}.ReleaseBeta|x86.Build.0 = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Debug|ARM.Build.0 = Debug|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Debug|x64.Build.0 = Debug|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Debug|x86.Build.0 = Debug|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Release|ARM.ActiveCfg = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Release|ARM.Build.0 = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Release|x64.ActiveCfg = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Release|x64.Build.0 = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Release|x86.ActiveCfg = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Release|x86.Build.0 = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|Any CPU.ActiveCfg = ReleaseBeta|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|Any CPU.Build.0 = ReleaseBeta|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|ARM.ActiveCfg = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|ARM.Build.0 = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|x64.ActiveCfg = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|x64.Build.0 = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|x86.ActiveCfg = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

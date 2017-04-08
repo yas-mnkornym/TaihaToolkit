@@ -63,6 +63,10 @@
       <Project>{a25685c9-c86c-4820-8faa-715e25c65b2f}</Project>
       <Name>TaihaToolkit.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TaihaToolkit.Dialog\TaihaToolkit.Dialog.csproj">
+      <Project>{8f2c9b65-85ff-45ff-b548-c51675248a57}</Project>
+      <Name>TaihaToolkit.Dialog</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
