@@ -1,9 +1,15 @@
 ﻿using Studiotaiha.Toolkit.Composition;
+using System;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("TaihaToolkit.Core.Tests")]
 
 namespace Studiotaiha.Toolkit.Settings
 {
 	public class SettingsService
 	{
+		public static Guid ServiceIdSettings { get; } = new Guid("D8C079FF-C37B-461F-BF3E-8280733F58E6");
+
 		#region Singleton
 
 		static SettingsService instance_;
@@ -12,7 +18,9 @@ namespace Studiotaiha.Toolkit.Settings
 		#endregion // Singleton
 
 		private SettingsService()
-		{ }
+		{
+			TaihaToolkit.Current.RegisterComponent(SettingsComponent.Instance);
+		}
 
 		public ISettingsContainer CreateContainer(string tag)
 		{

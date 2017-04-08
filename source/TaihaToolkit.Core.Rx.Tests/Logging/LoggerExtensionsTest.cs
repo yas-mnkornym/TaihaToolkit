@@ -12,7 +12,6 @@ namespace Studiotaiha.Toolkit.Core.Rx.Tests.Logging
 		[ClassInitialize]
 		public static void ClassInitialize(TestContext testContext)
 		{
-			TaihaToolkit.Current.RegisterComponents(RxComponent.Instance);
 		}
 		
 		[TestMethod]
