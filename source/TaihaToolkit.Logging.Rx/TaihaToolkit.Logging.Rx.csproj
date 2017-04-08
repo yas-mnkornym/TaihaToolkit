@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TaihaToolkit.Core\TaihaToolkit.Core.csproj" />
+    <ProjectReference Include="..\TaihaToolkit.Logging\TaihaToolkit.Logging.csproj" />
   </ItemGroup>
 
 </Project>

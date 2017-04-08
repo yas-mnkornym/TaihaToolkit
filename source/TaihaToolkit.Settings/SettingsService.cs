@@ -1,9 +1,8 @@
 ﻿using Studiotaiha.Toolkit.Composition;
 using System;
-using System.Reflection;
 using System.Runtime.CompilerServices;
 
-[assembly:InternalsVisibleTo("TaihaToolkit.Core.Tests")]
+[assembly: InternalsVisibleTo("TaihaToolkit.Core.Tests")]
 
 namespace Studiotaiha.Toolkit.Settings
 {

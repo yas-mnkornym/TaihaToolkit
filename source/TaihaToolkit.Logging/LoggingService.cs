@@ -18,6 +18,7 @@ namespace Studiotaiha.Toolkit.Logging
 
 		private LoggingService()
 		{
+			TaihaToolkit.Current.RegisterComponent(LoggingComponent.Instance);
 			RootLogger = CreateLogger(RootLoggerTag);
 			if (RootLogger == null) { throw new InvalidOperationException("Failed to create root logger."); }
 		}

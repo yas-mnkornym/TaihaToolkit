@@ -107,6 +107,10 @@
       <Project>{c903de05-9a93-4095-8392-c04f2ec0b297}</Project>
       <Name>TaihaToolkit.Logging.Rx</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TaihaToolkit.Logging\TaihaToolkit.Logging.csproj">
+      <Project>{d506616e-322e-4c1b-846c-92646b95a8cf}</Project>
+      <Name>TaihaToolkit.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TaihaToolkit.Settings.Rx\TaihaToolkit.Settings.Rx.csproj">
       <Project>{2b564d82-fe9f-403b-86f1-6b56ff2f58ef}</Project>
       <Name>TaihaToolkit.Settings.Rx</Name>
