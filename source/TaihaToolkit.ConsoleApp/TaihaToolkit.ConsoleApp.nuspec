@@ -11,7 +11,7 @@
     <licenseUrl>https://github.com/yas-mnkornym/TaihaToolkit/blob/master/LICENSE</licenseUrl>
     <dependencies>
       <dependency id="TaihaToolkit.Core" version="1.3.0" />
-      <dependency id="TaihaToolkit.Dialog" version="1.3.0" />
+      <dependency id="TaihaToolkit.Dialog" version="1.0.0" />
     </dependencies>
   </metadata>
 </package>
