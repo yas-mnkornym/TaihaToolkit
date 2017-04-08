@@ -19,7 +19,6 @@ namespace Studiotaiha.Toolkit
 			RegisterComponent(CoreComponent.Instance);
 		}
 
-
 		#region Component registration
 
 		List<IComponent> ComponentList { get; } = new List<IComponent>();
