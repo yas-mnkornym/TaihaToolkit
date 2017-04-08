@@ -2,9 +2,9 @@
   "supports": {},
   "dependencies": {
     "NETStandard.Library": "1.6.1",
-    "System.Runtime.Serialization.Json": "4.3.0"
+    "System.Reactive": "3.1.1"
   },
   "frameworks": {
-    "netstandard1.1": {}
+    "netstandard1.0": {}
   }
 }
