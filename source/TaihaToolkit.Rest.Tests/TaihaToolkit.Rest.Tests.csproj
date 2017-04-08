@@ -34,6 +34,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseBeta|AnyCPU'">
+    <OutputPath>bin\ReleaseBeta\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Net.Http" />
@@ -59,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TaihaToolkit.Rest\TaihaToolkit.Rest.csproj">
-      <Project>{9BBB07E9-7800-414F-A309-2E1D7F885795}</Project>
+      <Project>{c63fd4e8-0c1a-401c-b4e1-205d187695f4}</Project>
       <Name>TaihaToolkit.Rest</Name>
     </ProjectReference>
   </ItemGroup>

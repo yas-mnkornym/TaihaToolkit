@@ -34,6 +34,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseBeta|AnyCPU'">
+    <OutputPath>bin\ReleaseBeta\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -63,8 +72,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TaihaToolkit.Core\TaihaToolkit.Core.csproj">
-      <Project>{238f7b1b-eb78-429b-a97d-a951ba6693bf}</Project>
+      <Project>{a25685c9-c86c-4820-8faa-715e25c65b2f}</Project>
       <Name>TaihaToolkit.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaihaToolkit.Logging\TaihaToolkit.Logging.csproj">
+      <Project>{d506616e-322e-4c1b-846c-92646b95a8cf}</Project>
+      <Name>TaihaToolkit.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaihaToolkit.Settings\TaihaToolkit.Settings.csproj">
+      <Project>{5f0abc6e-be6d-4726-8bcc-e8b3f348012e}</Project>
+      <Name>TaihaToolkit.Settings</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

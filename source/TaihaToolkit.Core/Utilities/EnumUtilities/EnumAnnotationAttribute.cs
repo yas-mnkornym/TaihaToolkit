@@ -3,7 +3,7 @@
 namespace Studiotaiha.Toolkit.Utilities.EnumUtilities
 {
 	[AttributeUsage(AttributeTargets.Field, Inherited = false, AllowMultiple = true)]
-	sealed class EnumAnnotationAttribute : Attribute
+	public sealed class EnumAnnotationAttribute : Attribute
 	{
 		public EnumAnnotationAttribute(
 			string annotationId,
@@ -12,7 +12,9 @@ namespace Studiotaiha.Toolkit.Utilities.EnumUtilities
 			AnnotationId = annotationId;
 			Value = value;
 		}
+
 		public string AnnotationId { get; }
+
 		public string Value { get; }
 	}
 }

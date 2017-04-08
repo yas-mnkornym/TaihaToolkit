@@ -2,17 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.0</TargetFramework>
-    <RootNamespace>Studiotaiha.Toolkit</RootNamespace>
+    <RootNamespace>Studiotaiha.Toolkit.Logging</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://github.com/yas-mnkornym/TaihaToolkit</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/yas-mnkornym/TaihaToolkit/blob/master/LICENSE</PackageLicenseUrl>
     <Copyright>2016-2017©Studiotaiha</Copyright>
-    <Description>大破してすまない</Description>
+    <Description>LoggerでもRxな大破してすまない</Description>
     <Company>Studiotaiha</Company>
     <Authors>Studiotaiha</Authors>
-    <AssemblyVersion>1.3.0.0</AssemblyVersion>
-    <VersionPrefix>1.3.0</VersionPrefix>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <VersionPrefix>1.0.0</VersionPrefix>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='ReleaseBeta'">
@@ -24,7 +24,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Reactive" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaihaToolkit.Logging\TaihaToolkit.Logging.csproj" />
   </ItemGroup>
 
 </Project>
