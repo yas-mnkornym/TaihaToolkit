@@ -10,6 +10,13 @@ namespace Studiotaiha.Toolkit.Rest
 		IDictionary<string, string> Body { get; }
 		IDictionary<string, string> MultiPartHeader { get; }
 
+		ERequestBodyType RequestBodyType { get; set; }
+
+		/// <summary>
+		/// Only referenced when RequestBodyType is RawText
+		/// </summary>
+		Encoding RawTextEncoding { get; set; }
+
 		void AddFilePart(
 			string name,
 			Stream stream,
