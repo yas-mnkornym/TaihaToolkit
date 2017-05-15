@@ -20,6 +20,9 @@ namespace Studiotaiha.Toolkit.Rest.Tests
 		public int BufferSize { get; set; }
 		public string Text { get; set; }
 		public Encoding Encoding { get; set; }
+		public ERequestBodyType RequestBodyType { get; set; }
+		public Encoding RawTextEncoding { get; set; }
+
 		public void AddFilePart(string name, Stream stream, IEnumerable<KeyValuePair<string, string>> properties = null)
 		{
 			FileParts.Add(new FilePart {
