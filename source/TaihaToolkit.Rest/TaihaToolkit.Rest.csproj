@@ -11,9 +11,9 @@
     <Description>RESTでも大破してすまない</Description>
     <Company>Studiotaiha</Company>
     <Authors>Studiotaiha</Authors>
-    <AssemblyVersion>1.0.7.0</AssemblyVersion>
-    <VersionPrefix>1.0.7</VersionPrefix>
-    <FileVersion>1.0.7.0</FileVersion>
+    <AssemblyVersion>1.0.8.0</AssemblyVersion>
+    <VersionPrefix>1.0.8</VersionPrefix>
+    <FileVersion>1.0.8.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='ReleaseBeta'">
