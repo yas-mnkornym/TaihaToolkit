@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Text;
@@ -22,7 +23,7 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 		public void SetStream(Stream stream, int size = -1)
 		{
 			ContentStream = stream;
-			ContentSize = ContentSize;
+			ContentSize = size;
 		}
 
 		public void AddFilePart(string name, Stream stream, IEnumerable<KeyValuePair<string, string>> properties = null)
@@ -54,7 +55,7 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 
 		public void SetText(string text, Encoding encoding = null)
 		{
-			RawText = RawText;
+			RawText = text ?? throw new ArgumentNullException(nameof(text));
 			RawTextEncoding = encoding;
 		}
 	}
