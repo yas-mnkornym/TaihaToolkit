@@ -45,10 +45,9 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 			var requestUri = ConstructRequestUri(BaseUri, request.Path, parameterBag);
 
 			// Construct request message, then request
-			using (HttpClient client = new HttpClient())
+			using (var client = new HttpClient())
 			using (var requestMessage = new HttpRequestMessage(request.Method, requestUri)) {
-				
-				bool isUserAgentChanged = false;
+				var isUserAgentChanged = false;
 				foreach (var kv in headerBag) {
 					var key = kv.Key;
 					var value = kv.Value;
