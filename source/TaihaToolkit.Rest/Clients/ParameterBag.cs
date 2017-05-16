@@ -18,6 +18,7 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 		public int ContentSize { get; private set; }
 		public string RawText { get; set; }
 		public Encoding RawTextEncoding { get; set; }
+		public string BodyMediaType { get; set; }
 
 
 		public void SetStream(Stream stream, int size = -1)
@@ -53,10 +54,11 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 			MultiPartContents.Add(content);
 		}
 
-		public void SetText(string text, Encoding encoding = null)
+		public void SetText(string text, Encoding encoding = null, string contentType = null)
 		{
 			RawText = text ?? throw new ArgumentNullException(nameof(text));
 			RawTextEncoding = encoding;
+			BodyMediaType = contentType;
 		}
 	}
 }

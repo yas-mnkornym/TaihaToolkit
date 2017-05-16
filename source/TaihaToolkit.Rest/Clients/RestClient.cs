@@ -97,7 +97,9 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 				else if (parameterBag.RequestBodyType == ERequestBodyType.RawText) {
 					requestMessage.Content = parameterBag.RawTextEncoding == null
 						? new StringContent(parameterBag.RawText)
-						: new StringContent(parameterBag.RawText, parameterBag.RawTextEncoding);
+						: parameterBag.BodyMediaType == null
+							? new StringContent(parameterBag.RawText, parameterBag.RawTextEncoding)
+							: new StringContent(parameterBag.RawText, parameterBag.RawTextEncoding, parameterBag.BodyMediaType);
 				}
 				else if (parameterBag.RequestBodyType == ERequestBodyType.MultiPartFormData) {
 					var multiPartContent = new MultipartFormDataContent();

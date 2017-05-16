@@ -17,6 +17,11 @@ namespace Studiotaiha.Toolkit.Rest
 		/// </summary>
 		Encoding RawTextEncoding { get; set; }
 
+		/// <summary>
+		/// Only referenced when RequestBodyTep is not ApplicationXWwwFormUrlEncoded nor MultiPartFormData
+		/// </summary>
+		string BodyMediaType { get; set; }
+
 		void AddFilePart(
 			string name,
 			Stream stream,
@@ -39,6 +44,7 @@ namespace Studiotaiha.Toolkit.Rest
 
 		void SetText(
 			string text,
-			Encoding encoding = null);
+			Encoding encoding = null,
+			string contentType = null);
 	}
 }
