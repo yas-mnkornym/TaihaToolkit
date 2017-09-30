@@ -13,6 +13,7 @@
     <Authors>Studiotaiha</Authors>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <VersionPrefix>1.0.1</VersionPrefix>
+    <Configurations>Debug;Release;ReleaseBeta</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='ReleaseBeta'">
