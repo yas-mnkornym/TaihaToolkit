@@ -14,8 +14,13 @@ namespace Studiotaiha.Toolkit
 		public NotificationObjectWithPropertyBag(IDispatcher dispatcher = null)
 			: base(dispatcher)
 		{ }
-		
-		[OnDeserializing]
+
+		public NotificationObjectWithPropertyBag(IDispatcher dispatcher, bool enableAutoDispatch)
+			: base(dispatcher, enableAutoDispatch)
+		{
+		}
+
+	[OnDeserializing]
 		void OnDeserializingForNotificationObjectWithPropertyBag(StreamingContext context)
 		{
 			PropertyBag = new Dictionary<string, object>();
