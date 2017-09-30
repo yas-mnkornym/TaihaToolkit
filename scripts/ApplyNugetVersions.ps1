@@ -16,7 +16,7 @@ Import-Module $assemblyInfoCmdletPath
 		$xml.package.metadata.version = $packageVersion + "-beta"
 		$xml.Save($_.FullName)
 	}
-	catch [DirectoryNotFoundException]{
+	catch {
 		Write-Host "Failed to load Assembly.cs."
 		Write-Host "Skipping " + $assemblyInfoPath
 	}
