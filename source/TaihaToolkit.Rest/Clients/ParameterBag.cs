@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Text;
@@ -17,12 +18,13 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 		public int ContentSize { get; private set; }
 		public string RawText { get; set; }
 		public Encoding RawTextEncoding { get; set; }
+		public string BodyMediaType { get; set; }
 
 
 		public void SetStream(Stream stream, int size = -1)
 		{
 			ContentStream = stream;
-			ContentSize = ContentSize;
+			ContentSize = size;
 		}
 
 		public void AddFilePart(string name, Stream stream, IEnumerable<KeyValuePair<string, string>> properties = null)
@@ -52,10 +54,11 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 			MultiPartContents.Add(content);
 		}
 
-		public void SetText(string text, Encoding encoding = null)
+		public void SetText(string text, Encoding encoding = null, string contentType = null)
 		{
-			RawText = RawText;
+			RawText = text ?? throw new ArgumentNullException(nameof(text));
 			RawTextEncoding = encoding;
+			BodyMediaType = contentType;
 		}
 	}
 }

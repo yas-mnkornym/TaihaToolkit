@@ -10,12 +10,16 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 {
 	public class RestClient : IRestClient
 	{
+		static ThreadLocal<HttpClient> ThreadLocalHttpClient { get; } = new ThreadLocal<HttpClient>(() => new HttpClient());
+
 		public string AuthrizationHeaderKey { get; } = "Authorization";
 		public string UserAgentHeaderKey { get; } = "User-Agent";
 
 		public Uri BaseUri { get; }
 		public IRestAuthenticator Authenticator { get; set; }
 		public string UserAgent { get; set; }
+
+		HttpClient HttpClient => ThreadLocalHttpClient.Value;
 
 		public RestClient(Uri baseUri)
 		{
@@ -45,10 +49,8 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 			var requestUri = ConstructRequestUri(BaseUri, request.Path, parameterBag);
 
 			// Construct request message, then request
-			using (HttpClient client = new HttpClient())
 			using (var requestMessage = new HttpRequestMessage(request.Method, requestUri)) {
-				
-				bool isUserAgentChanged = false;
+				var isUserAgentChanged = false;
 				foreach (var kv in headerBag) {
 					var key = kv.Key;
 					var value = kv.Value;
@@ -65,7 +67,7 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 						}
 					}
 					else if (key == UserAgentHeaderKey) { // User-Agent
-						client.DefaultRequestHeaders.Add(UserAgentHeaderKey, value);
+						HttpClient.DefaultRequestHeaders.Add(UserAgentHeaderKey, value);
 						isUserAgentChanged = true;
 					}
 					else { // Other header values
@@ -75,7 +77,7 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 				
 				// Confiure User-Agent if needed
 				if (!isUserAgentChanged && !string.IsNullOrWhiteSpace(UserAgent)) {
-					client.DefaultRequestHeaders.Add(UserAgentHeaderKey, UserAgent);
+					HttpClient.DefaultRequestHeaders.Add(UserAgentHeaderKey, UserAgent);
 					isUserAgentChanged = true;
 				}
 
@@ -98,7 +100,9 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 				else if (parameterBag.RequestBodyType == ERequestBodyType.RawText) {
 					requestMessage.Content = parameterBag.RawTextEncoding == null
 						? new StringContent(parameterBag.RawText)
-						: new StringContent(parameterBag.RawText, parameterBag.RawTextEncoding);
+						: parameterBag.BodyMediaType == null
+							? new StringContent(parameterBag.RawText, parameterBag.RawTextEncoding)
+							: new StringContent(parameterBag.RawText, parameterBag.RawTextEncoding, parameterBag.BodyMediaType);
 				}
 				else if (parameterBag.RequestBodyType == ERequestBodyType.MultiPartFormData) {
 					var multiPartContent = new MultipartFormDataContent();
@@ -111,7 +115,7 @@ namespace Studiotaiha.Toolkit.Rest.Clients
 				}
 
 				// Send request
-				using (var response = await client.SendAsync(requestMessage)) {
+				using (var response = await HttpClient.SendAsync(requestMessage)) {
 					var restResult = new RestResult<TSuccessResult, TFailureResult>();
 
 					// Parse response

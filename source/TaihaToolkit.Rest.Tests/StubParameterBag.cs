@@ -20,6 +20,10 @@ namespace Studiotaiha.Toolkit.Rest.Tests
 		public int BufferSize { get; set; }
 		public string Text { get; set; }
 		public Encoding Encoding { get; set; }
+		public ERequestBodyType RequestBodyType { get; set; }
+		public Encoding RawTextEncoding { get; set; }
+		public string BodyMediaType { get; set; }
+
 		public void AddFilePart(string name, Stream stream, IEnumerable<KeyValuePair<string, string>> properties = null)
 		{
 			FileParts.Add(new FilePart {
@@ -54,7 +58,7 @@ namespace Studiotaiha.Toolkit.Rest.Tests
 			BufferSize = bufferSize;
 		}
 
-		public void SetText(string text, Encoding encoding = null)
+		public void SetText(string text, Encoding encoding = null, string mediaType = null)
 		{
 			Text = text;
 			Encoding = encoding;
