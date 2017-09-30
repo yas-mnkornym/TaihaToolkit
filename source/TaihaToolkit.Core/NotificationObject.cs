@@ -9,10 +9,18 @@ namespace Studiotaiha.Toolkit
 	[DataContract]
 	public class NotificationObject : Dispatchable, INotifyPropertyChanged
 	{
+		public bool EnableAutoDispatch { get; set; }
+
 		public NotificationObject(IDispatcher dispatcher = null)
 			: base(dispatcher)
 		{ }
-		
+
+		public NotificationObject(IDispatcher dispatcher, bool enableAutoDispatch)
+			: base(dispatcher)
+		{
+			EnableAutoDispatch = enableAutoDispatch;
+		}
+
 		/// <summary>
 		/// Sets the value to the variable and trigger property changed event.
 		/// </summary>
@@ -52,9 +60,14 @@ namespace Studiotaiha.Toolkit
 		protected virtual void RaisePropertyChanged([CallerMemberName]string propertyName = null)
 		{
 			if (PropertyChanged != null) {
-				Dispatch(() => {
+				if (EnableAutoDispatch) {
+					Dispatch(() => {
+						PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+					});
+				}
+				else {
 					PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-				});
+				}
 			}
 		}
 

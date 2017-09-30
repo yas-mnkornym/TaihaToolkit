@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.0
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{438E9E17-ADEC-49A4-A45E-67AC6AA3ADDB}"
 EndProject
@@ -21,21 +21,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.ConsoleApp", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Rest.Tests", "TaihaToolkit.Rest.Tests\TaihaToolkit.Rest.Tests.csproj", "{D096B6C9-2568-44F8-B03A-88CC81DAE86C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Settings", "TaihaToolkit.Settings\TaihaToolkit.Settings.csproj", "{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaihaToolkit.Settings", "TaihaToolkit.Settings\TaihaToolkit.Settings.csproj", "{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Core", "TaihaToolkit.Core\TaihaToolkit.Core.csproj", "{A25685C9-C86C-4820-8FAA-715E25C65B2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaihaToolkit.Core", "TaihaToolkit.Core\TaihaToolkit.Core.csproj", "{A25685C9-C86C-4820-8FAA-715E25C65B2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Settings.Rx", "TaihaToolkit.Settings.Rx\TaihaToolkit.Settings.Rx.csproj", "{2B564D82-FE9F-403B-86F1-6B56FF2F58EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaihaToolkit.Settings.Rx", "TaihaToolkit.Settings.Rx\TaihaToolkit.Settings.Rx.csproj", "{2B564D82-FE9F-403B-86F1-6B56FF2F58EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platform", "Platform", "{CA3D8CC4-ABE2-471D-BD01-185C9384B999}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Rest", "TaihaToolkit.Rest\TaihaToolkit.Rest.csproj", "{C63FD4E8-0C1A-401C-B4E1-205D187695F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaihaToolkit.Rest", "TaihaToolkit.Rest\TaihaToolkit.Rest.csproj", "{C63FD4E8-0C1A-401C-B4E1-205D187695F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Logging.Rx", "TaihaToolkit.Logging.Rx\TaihaToolkit.Logging.Rx.csproj", "{C903DE05-9A93-4095-8392-C04F2EC0B297}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaihaToolkit.Logging.Rx", "TaihaToolkit.Logging.Rx\TaihaToolkit.Logging.Rx.csproj", "{C903DE05-9A93-4095-8392-C04F2EC0B297}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Logging", "TaihaToolkit.Logging\TaihaToolkit.Logging.csproj", "{D506616E-322E-4C1B-846C-92646B95A8CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaihaToolkit.Logging", "TaihaToolkit.Logging\TaihaToolkit.Logging.csproj", "{D506616E-322E-4C1B-846C-92646B95A8CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaihaToolkit.Dialog", "TaihaToolkit.Dialog\TaihaToolkit.Dialog.csproj", "{8F2C9B65-85FF-45FF-B548-C51675248A57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaihaToolkit.Dialog", "TaihaToolkit.Dialog\TaihaToolkit.Dialog.csproj", "{8F2C9B65-85FF-45FF-B548-C51675248A57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -237,14 +237,14 @@ Global
 		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.Release|x64.Build.0 = Release|Any CPU
 		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.Release|x86.ActiveCfg = Release|Any CPU
 		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.Release|x86.Build.0 = Release|Any CPU
-		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|Any CPU.ActiveCfg = ReleaseBeta|Any CPU
-		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|Any CPU.Build.0 = ReleaseBeta|Any CPU
-		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|ARM.ActiveCfg = ReleaseBeta|Any CPU
-		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|ARM.Build.0 = ReleaseBeta|Any CPU
-		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|x64.ActiveCfg = ReleaseBeta|Any CPU
-		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|x64.Build.0 = ReleaseBeta|Any CPU
-		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|x86.ActiveCfg = ReleaseBeta|Any CPU
-		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|x86.Build.0 = ReleaseBeta|Any CPU
+		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|Any CPU.ActiveCfg = Release|Any CPU
+		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|Any CPU.Build.0 = Release|Any CPU
+		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|ARM.ActiveCfg = Release|Any CPU
+		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|ARM.Build.0 = Release|Any CPU
+		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|x64.ActiveCfg = Release|Any CPU
+		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|x64.Build.0 = Release|Any CPU
+		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|x86.ActiveCfg = Release|Any CPU
+		{5F0ABC6E-BE6D-4726-8BCC-E8B3F348012E}.ReleaseBeta|x86.Build.0 = Release|Any CPU
 		{A25685C9-C86C-4820-8FAA-715E25C65B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A25685C9-C86C-4820-8FAA-715E25C65B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A25685C9-C86C-4820-8FAA-715E25C65B2F}.Debug|ARM.ActiveCfg = Debug|Any CPU
@@ -261,8 +261,8 @@ Global
 		{A25685C9-C86C-4820-8FAA-715E25C65B2F}.Release|x64.Build.0 = Release|Any CPU
 		{A25685C9-C86C-4820-8FAA-715E25C65B2F}.Release|x86.ActiveCfg = Release|Any CPU
 		{A25685C9-C86C-4820-8FAA-715E25C65B2F}.Release|x86.Build.0 = Release|Any CPU
-		{A25685C9-C86C-4820-8FAA-715E25C65B2F}.ReleaseBeta|Any CPU.ActiveCfg = ReleaseBeta|Any CPU
-		{A25685C9-C86C-4820-8FAA-715E25C65B2F}.ReleaseBeta|Any CPU.Build.0 = ReleaseBeta|Any CPU
+		{A25685C9-C86C-4820-8FAA-715E25C65B2F}.ReleaseBeta|Any CPU.ActiveCfg = Release|Any CPU
+		{A25685C9-C86C-4820-8FAA-715E25C65B2F}.ReleaseBeta|Any CPU.Build.0 = Release|Any CPU
 		{A25685C9-C86C-4820-8FAA-715E25C65B2F}.ReleaseBeta|ARM.ActiveCfg = Release|Any CPU
 		{A25685C9-C86C-4820-8FAA-715E25C65B2F}.ReleaseBeta|ARM.Build.0 = Release|Any CPU
 		{A25685C9-C86C-4820-8FAA-715E25C65B2F}.ReleaseBeta|x64.ActiveCfg = Release|Any CPU
@@ -285,8 +285,8 @@ Global
 		{2B564D82-FE9F-403B-86F1-6B56FF2F58EF}.Release|x64.Build.0 = Release|Any CPU
 		{2B564D82-FE9F-403B-86F1-6B56FF2F58EF}.Release|x86.ActiveCfg = Release|Any CPU
 		{2B564D82-FE9F-403B-86F1-6B56FF2F58EF}.Release|x86.Build.0 = Release|Any CPU
-		{2B564D82-FE9F-403B-86F1-6B56FF2F58EF}.ReleaseBeta|Any CPU.ActiveCfg = ReleaseBeta|Any CPU
-		{2B564D82-FE9F-403B-86F1-6B56FF2F58EF}.ReleaseBeta|Any CPU.Build.0 = ReleaseBeta|Any CPU
+		{2B564D82-FE9F-403B-86F1-6B56FF2F58EF}.ReleaseBeta|Any CPU.ActiveCfg = Release|Any CPU
+		{2B564D82-FE9F-403B-86F1-6B56FF2F58EF}.ReleaseBeta|Any CPU.Build.0 = Release|Any CPU
 		{2B564D82-FE9F-403B-86F1-6B56FF2F58EF}.ReleaseBeta|ARM.ActiveCfg = Release|Any CPU
 		{2B564D82-FE9F-403B-86F1-6B56FF2F58EF}.ReleaseBeta|ARM.Build.0 = Release|Any CPU
 		{2B564D82-FE9F-403B-86F1-6B56FF2F58EF}.ReleaseBeta|x64.ActiveCfg = Release|Any CPU
@@ -309,8 +309,8 @@ Global
 		{C63FD4E8-0C1A-401C-B4E1-205D187695F4}.Release|x64.Build.0 = Release|Any CPU
 		{C63FD4E8-0C1A-401C-B4E1-205D187695F4}.Release|x86.ActiveCfg = Release|Any CPU
 		{C63FD4E8-0C1A-401C-B4E1-205D187695F4}.Release|x86.Build.0 = Release|Any CPU
-		{C63FD4E8-0C1A-401C-B4E1-205D187695F4}.ReleaseBeta|Any CPU.ActiveCfg = ReleaseBeta|Any CPU
-		{C63FD4E8-0C1A-401C-B4E1-205D187695F4}.ReleaseBeta|Any CPU.Build.0 = ReleaseBeta|Any CPU
+		{C63FD4E8-0C1A-401C-B4E1-205D187695F4}.ReleaseBeta|Any CPU.ActiveCfg = Release|Any CPU
+		{C63FD4E8-0C1A-401C-B4E1-205D187695F4}.ReleaseBeta|Any CPU.Build.0 = Release|Any CPU
 		{C63FD4E8-0C1A-401C-B4E1-205D187695F4}.ReleaseBeta|ARM.ActiveCfg = Release|Any CPU
 		{C63FD4E8-0C1A-401C-B4E1-205D187695F4}.ReleaseBeta|ARM.Build.0 = Release|Any CPU
 		{C63FD4E8-0C1A-401C-B4E1-205D187695F4}.ReleaseBeta|x64.ActiveCfg = Release|Any CPU
@@ -333,8 +333,8 @@ Global
 		{C903DE05-9A93-4095-8392-C04F2EC0B297}.Release|x64.Build.0 = Release|Any CPU
 		{C903DE05-9A93-4095-8392-C04F2EC0B297}.Release|x86.ActiveCfg = Release|Any CPU
 		{C903DE05-9A93-4095-8392-C04F2EC0B297}.Release|x86.Build.0 = Release|Any CPU
-		{C903DE05-9A93-4095-8392-C04F2EC0B297}.ReleaseBeta|Any CPU.ActiveCfg = ReleaseBeta|Any CPU
-		{C903DE05-9A93-4095-8392-C04F2EC0B297}.ReleaseBeta|Any CPU.Build.0 = ReleaseBeta|Any CPU
+		{C903DE05-9A93-4095-8392-C04F2EC0B297}.ReleaseBeta|Any CPU.ActiveCfg = Release|Any CPU
+		{C903DE05-9A93-4095-8392-C04F2EC0B297}.ReleaseBeta|Any CPU.Build.0 = Release|Any CPU
 		{C903DE05-9A93-4095-8392-C04F2EC0B297}.ReleaseBeta|ARM.ActiveCfg = Release|Any CPU
 		{C903DE05-9A93-4095-8392-C04F2EC0B297}.ReleaseBeta|ARM.Build.0 = Release|Any CPU
 		{C903DE05-9A93-4095-8392-C04F2EC0B297}.ReleaseBeta|x64.ActiveCfg = Release|Any CPU
@@ -357,8 +357,8 @@ Global
 		{D506616E-322E-4C1B-846C-92646B95A8CF}.Release|x64.Build.0 = Release|Any CPU
 		{D506616E-322E-4C1B-846C-92646B95A8CF}.Release|x86.ActiveCfg = Release|Any CPU
 		{D506616E-322E-4C1B-846C-92646B95A8CF}.Release|x86.Build.0 = Release|Any CPU
-		{D506616E-322E-4C1B-846C-92646B95A8CF}.ReleaseBeta|Any CPU.ActiveCfg = ReleaseBeta|Any CPU
-		{D506616E-322E-4C1B-846C-92646B95A8CF}.ReleaseBeta|Any CPU.Build.0 = ReleaseBeta|Any CPU
+		{D506616E-322E-4C1B-846C-92646B95A8CF}.ReleaseBeta|Any CPU.ActiveCfg = Release|Any CPU
+		{D506616E-322E-4C1B-846C-92646B95A8CF}.ReleaseBeta|Any CPU.Build.0 = Release|Any CPU
 		{D506616E-322E-4C1B-846C-92646B95A8CF}.ReleaseBeta|ARM.ActiveCfg = Release|Any CPU
 		{D506616E-322E-4C1B-846C-92646B95A8CF}.ReleaseBeta|ARM.Build.0 = Release|Any CPU
 		{D506616E-322E-4C1B-846C-92646B95A8CF}.ReleaseBeta|x64.ActiveCfg = Release|Any CPU
@@ -381,8 +381,8 @@ Global
 		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Release|x64.Build.0 = Release|Any CPU
 		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Release|x86.ActiveCfg = Release|Any CPU
 		{8F2C9B65-85FF-45FF-B548-C51675248A57}.Release|x86.Build.0 = Release|Any CPU
-		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|Any CPU.ActiveCfg = ReleaseBeta|Any CPU
-		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|Any CPU.Build.0 = ReleaseBeta|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|Any CPU.ActiveCfg = Release|Any CPU
+		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|Any CPU.Build.0 = Release|Any CPU
 		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|ARM.ActiveCfg = Release|Any CPU
 		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|ARM.Build.0 = Release|Any CPU
 		{8F2C9B65-85FF-45FF-B548-C51675248A57}.ReleaseBeta|x64.ActiveCfg = Release|Any CPU
@@ -401,5 +401,8 @@ Global
 		{08161D21-72CE-4F02-8A17-E889F60901F3} = {29487D4B-F1B6-4A41-9EEA-2FB69668A1EF}
 		{6B757596-4759-445F-8AE1-A324F3B5F5C3} = {CA3D8CC4-ABE2-471D-BD01-185C9384B999}
 		{D096B6C9-2568-44F8-B03A-88CC81DAE86C} = {438E9E17-ADEC-49A4-A45E-67AC6AA3ADDB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C43A9D45-79F8-41AC-9717-0E2384BB4513}
 	EndGlobalSection
 EndGlobal
