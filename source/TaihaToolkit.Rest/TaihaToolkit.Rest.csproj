@@ -14,6 +14,7 @@
     <AssemblyVersion>1.0.11.0</AssemblyVersion>
     <VersionPrefix>1.0.11</VersionPrefix>
     <FileVersion>1.0.11.0</FileVersion>
+    <Configurations>Debug;Release;ReleaseBeta</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='ReleaseBeta'">
