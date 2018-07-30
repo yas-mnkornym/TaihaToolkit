@@ -1,19 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.0;net452</TargetFrameworks>
+    <TargetFrameworks>netstandard1.0;netstandard2.0;net452</TargetFrameworks>
     <RootNamespace>Studiotaiha.Toolkit.Logging</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://github.com/yas-mnkornym/TaihaToolkit</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/yas-mnkornym/TaihaToolkit/blob/master/LICENSE</PackageLicenseUrl>
-    <Copyright>2016-2017©Studiotaiha</Copyright>
+    <Copyright>2016-2018©Studiotaiha</Copyright>
     <Description>ログが大破してすまない</Description>
     <Company>Studiotaiha</Company>
     <Authors>Studiotaiha</Authors>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <VersionPrefix>1.0.1</VersionPrefix>
+    <VersionPrefix>1.0.2</VersionPrefix>
+    <AssemblyVersion>$(VersionPrefix).0</AssemblyVersion>
+    <FileVersion>$(VersionPrefix).0</FileVersion>
+    <IncludeSymbols>True</IncludeSymbols>
     <Configurations>Debug;Release;ReleaseBeta</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <WarningsAsErrors>NU1605</WarningsAsErrors>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='ReleaseBeta'">

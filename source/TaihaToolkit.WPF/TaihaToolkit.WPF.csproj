@@ -1,87 +1,55 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4324F19E-CE24-40F2-B070-443A305247F4}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFramework>net452</TargetFramework>
     <RootNamespace>Studiotaiha.Toolkit</RootNamespace>
-    <AssemblyName>TaihaToolkit.WPF</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-    <TargetFrameworkProfile />
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/yas-mnkornym/TaihaToolkit</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/yas-mnkornym/TaihaToolkit/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>2016-2018©Studiotaiha</Copyright>
+    <Description>WPFでも大破してすまない</Description>
+    <Company>Studiotaiha</Company>
+    <Authors>Studiotaiha</Authors>
+    <VersionPrefix>1.0.5</VersionPrefix>
+    <AssemblyVersion>$(VersionPrefix).0</AssemblyVersion>
+    <FileVersion>$(VersionPrefix).0</FileVersion>
+    <IncludeSymbols>True</IncludeSymbols>
+    <Configurations>Debug;Release;ReleaseBeta</Configurations>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+
+  <PropertyGroup>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <WarningsAsErrors>NU1605</WarningsAsErrors>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+
+  <PropertyGroup Condition="'$(Configuration)'=='ReleaseBeta'">
+    <VersionSuffix>beta</VersionSuffix>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseBeta|AnyCPU'">
-    <OutputPath>bin\ReleaseBeta\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <!-- XAML elements -->
+    <Compile Update="**\*.xaml.cs" SubType="Code" DependentUpon="%(Filename)" />
+		<UpToDateCheckInput Include="**\*.xaml" />
+
+    <!-- Resources -->
+    <EmbeddedResource Update="Properties\Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
+    <Compile Update="Properties\Resources.Designer.cs" AutoGen="True" DependentUpon="Resources.resx" DesignTime="True" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaihaToolkit.Core\TaihaToolkit.Core.csproj" />
+    <ProjectReference Include="..\TaihaToolkit.Settings\TaihaToolkit.Settings.csproj" />
+  </ItemGroup>
+  
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Windows" />
     <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="DelegateCommand.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings\WithBackupSettingsFileExpoter.cs" />
-    <Compile Include="WPFComponent.cs" />
-    <Compile Include="WPFDispatcher.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="TaihaToolkit.WPF.nuspec" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TaihaToolkit.Core\TaihaToolkit.Core.csproj">
-      <Project>{a25685c9-c86c-4820-8faa-715e25c65b2f}</Project>
-      <Name>TaihaToolkit.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TaihaToolkit.Settings\TaihaToolkit.Settings.csproj">
-      <Project>{5f0abc6e-be6d-4726-8bcc-e8b3f348012e}</Project>
-      <Name>TaihaToolkit.Settings</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
