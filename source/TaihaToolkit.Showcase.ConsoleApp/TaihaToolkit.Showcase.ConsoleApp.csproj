@@ -1,109 +1,31 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{08161D21-72CE-4F02-8A17-E889F60901F3}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StudioTaiha.Toolkit.Showcase.ConsoleApp</RootNamespace>
-    <AssemblyName>TaihaToolkit.Showcase.ConsoleApp</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <TargetFrameworks>net452;netcoreapp2.0</TargetFrameworks>
+    <Configurations>Debug;Release;ReleaseBeta</Configurations>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+
+  <PropertyGroup Condition="'$(Configuration)'=='ReleaseBeta'">
+    <VersionSuffix>beta</VersionSuffix>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseBeta|AnyCPU'">
-    <OutputPath>bin\ReleaseBeta\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
+    <PackageReference Include="DynamicJson" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
+  
   <ItemGroup>
-    <Compile Include="DynamicJson.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scenarios\Dialog\DialogScenario.cs" />
-    <Compile Include="Scenarios\Dialog\DialogScenarioBase.cs" />
-    <Compile Include="Scenarios\Dialog\DialogScenarios\ShowDialogScenario.cs" />
-    <Compile Include="Scenarios\Dialog\DialogScenarios\ShowMessageScenario.cs" />
-    <Compile Include="Scenarios\Rest\RestScenarioBase.cs" />
-    <Compile Include="Scenarios\Rest\RestScenarios.cs" />
-    <Compile Include="Scenarios\Rest\Wabisabi\WabisabiAuthenticator.cs" />
-    <Compile Include="Scenarios\Rest\Wabisabi\WabisabiLoginRequest.cs" />
-    <Compile Include="Scenarios\Rest\Wabisabi\WabisabiMeInfoScenario.cs" />
-    <Compile Include="Scenarios\RootScenarioAttribute.cs" />
-    <Compile Include="Scenarios\IScenario.cs" />
-    <Compile Include="Scenarios\SubScenarioAttribute.cs" />
-    <Compile Include="Scenarios\SubScenarioBase.cs" />
+    <ProjectReference Include="..\TaihaToolkit.ConsoleApp\TaihaToolkit.ConsoleApp.csproj" />
+    <ProjectReference Include="..\TaihaToolkit.Core\TaihaToolkit.Core.csproj" />
+    <ProjectReference Include="..\TaihaToolkit.Dialog\TaihaToolkit.Dialog.csproj" />
+    <ProjectReference Include="..\TaihaToolkit.Rest\TaihaToolkit.Rest.csproj" />
+    <ProjectReference Include="..\TaihaToolkit.Settings\TaihaToolkit.Settings.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TaihaToolkit.ConsoleApp\TaihaToolkit.ConsoleApp.csproj">
-      <Project>{6b757596-4759-445f-8ae1-a324f3b5f5c3}</Project>
-      <Name>TaihaToolkit.ConsoleApp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TaihaToolkit.Core\TaihaToolkit.Core.csproj">
-      <Project>{a25685c9-c86c-4820-8faa-715e25c65b2f}</Project>
-      <Name>TaihaToolkit.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TaihaToolkit.Dialog\TaihaToolkit.Dialog.csproj">
-      <Project>{8f2c9b65-85ff-45ff-b548-c51675248a57}</Project>
-      <Name>TaihaToolkit.Dialog</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TaihaToolkit.Rest\TaihaToolkit.Rest.csproj">
-      <Project>{c63fd4e8-0c1a-401c-b4e1-205d187695f4}</Project>
-      <Name>TaihaToolkit.Rest</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TaihaToolkit.Settings\TaihaToolkit.Settings.csproj">
-      <Project>{5f0abc6e-be6d-4726-8bcc-e8b3f348012e}</Project>
-      <Name>TaihaToolkit.Settings</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
