@@ -10,7 +10,7 @@
     <Description>コンソールアプリでも大破してすまない</Description>
     <Company>Studiotaiha</Company>
     <Authors>Studiotaiha</Authors>
-    <VersionPrefix>1.0.2</VersionPrefix>
+    <VersionPrefix>1.0.3</VersionPrefix>
     <AssemblyVersion>$(VersionPrefix).0</AssemblyVersion>
     <FileVersion>$(VersionPrefix).0</FileVersion>
     <IncludeSymbols>True</IncludeSymbols>
